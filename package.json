@@ -1,0 +1,13 @@
+{
+  "name": "tip jar mobile app",
+  "version": "1.0.0",
+  "description": "gratuity app built with react native",
+  "author": "brandon",
+  "main": "node_modules/expo/AppEntry.js",
+  "private": true,
+  "dependencies": {
+    "expo": "^23.0.0",
+    "react": "16.0.0",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-23.0.0.tar.gz"
+  }
+}
