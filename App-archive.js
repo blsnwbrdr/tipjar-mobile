@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
-import { StyleSheet, Text, View, ScrollView, Button, Alert, FlatList, TouchableWithoutFeedback } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, View, ScrollView, Button, Alert, FlatList } from 'react-native';
 import { AppLoading, Font } from 'expo';
-import { List } from './list.js';
 
-export default class App extends Component {
+export default class App extends React.Component {
   state = {
     isLoadingComplete: false,
   };
@@ -25,11 +24,28 @@ export default class App extends Component {
               <Text style={styles.titleText}>TIP JAR</Text>
               <Text style={styles.subTitleText}>A globetrotting guide to gratuity</Text>
             </View>
-            <List />
+            <Button
+              onPress={this._onPressLocation}
+              title="Choose"
+              color="#494F56"
+              accessibilityLabel="Choose a location"
+            />
+            <View style={styles.listContainer}>
+              <FlatList
+                tipData = {[
+                  {country: "United States"},
+                  {country: "Japan"}
+                ]}
+                renderItem = {({tipData}) => <Text style={styles.listText}>{tipData.country}</Text>}
+              />
+            </View>
           </ScrollView>
         </View>
       );
     }
+  }
+  _onPressLocation() {
+    Alert.alert('You tapped the button!')
   }
 
   // ASYNC LOAD FONTS
@@ -49,19 +65,14 @@ export default class App extends Component {
     this.setState({ isLoadingComplete: true });
   };
 }
-
-// STYLE VARIABLES
 const primaryColor = '#494F56';
 const secondaryColor = '#B57A42';
-
-// STYLESHEET
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
   },
   contentContainer: {
-    alignItems: 'center',
     paddingTop: 30,
   },
   headerContainer: {
@@ -81,4 +92,24 @@ const styles = StyleSheet.create({
     color: primaryColor,
     marginBottom: 10,
   },
+  button: {
+    alignItems: 'center',
+  },
+  buttonText: {
+    fontFamily: 'hind',
+    fontSize: 20,
+    color: primaryColor,
+    marginTop: 10,
+    marginBottom: 10,
+  },
+  listContainer: {
+    alignItems: 'center',
+    marginTop: 30,
+    backgroundColor: '#000',
+  },
+  listText: {
+    fontFamily: 'hind',
+    fontSize: 18,
+    color: primaryColor,
+  }
 });
