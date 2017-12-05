@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, ScrollView, Button, Alert, FlatList, TouchableWithoutFeedback } from 'react-native';
-import { StackNavigation } from 'react-navigation';
 import { AppLoading, Font } from 'expo';
 import { List } from './list.js';
 

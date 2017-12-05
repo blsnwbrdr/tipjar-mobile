@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, FlatList, Alert, Button, TouchableWithoutFeedback } from 'react-native';
 
 // JSON DATA
-const data = require('./data/countryTipData.json');
+const countryTipData = require('./data/countryTipData.json');
+const currencyData = require('./data/currencyData.json');
 
 // SORT COUNTRY LIST
 function compare(a,b) {
@@ -12,27 +13,28 @@ function compare(a,b) {
     return 1;
   return 0;
 }
-data.sort(compare);
+countryTipData.sort(compare);
 
 export class List extends Component {
-  state = {
-    data: data,
-  };
-
   constructor(props) {
     super(props);
     this.onPressTipData = this.onPressTipData.bind(this);
     this.onPressList = this.onPressList.bind(this);
-    this.state = {listView: true,data: data,};
+    this.state = {listView: true,countryTipData: countryTipData,};
   }
 
   onPressTipData(country){
-    for ( var x = 0; x < data.length; x++) {
-      if (country === data[x].country) {
-        this.setState({
-         listView: false,
-         data: data[x],
-        })
+    for ( var x = 0; x < countryTipData.length; x++) {
+      if (country === countryTipData[x].country) {
+        for ( var i = 0; i < currencyData.length; i++) {
+          if (countryTipData[x].currency === currencyData[i].currency) {
+            this.setState({
+             listView: false,
+             countryTipData: countryTipData[x],
+             currencyData: currencyData[i],
+            })
+          }
+        }
       }
     }
   }
@@ -40,7 +42,7 @@ export class List extends Component {
   onPressList() {
     this.setState({
       listView: true,
-      data: data,
+      countryTipData: countryTipData,
     });
   }
 
@@ -55,7 +57,7 @@ export class List extends Component {
             </View>
           </TouchableWithoutFeedback>
           <FlatList style={styles.listContainer}
-            data = {this.state.data}
+            data = {this.state.countryTipData}
             keyExtractor = {(x, i) => i}
             renderItem = { ({item}) =>
               <TouchableWithoutFeedback onPress={ () => this.onPressTipData(item.country) }>
@@ -76,19 +78,19 @@ export class List extends Component {
             </View>
           </TouchableWithoutFeedback>
           <View style={styles.countryContainer}>
-            <Text style={styles.countryHeader}>{this.state.data.country}</Text>
+            <Text style={styles.countryHeader}>{this.state.countryTipData.country}</Text>
             <Text style={styles.countryTitle}>Dining:</Text>
-            <Text style={styles.countryText}>{this.state.data.dining}</Text>
+            <Text style={styles.countryText}>{this.state.countryTipData.dining}</Text>
             <Text style={styles.countryTitle}>Transportation:</Text>
-            <Text style={styles.countryText}>{this.state.data.transportation}</Text>
+            <Text style={styles.countryText}>{this.state.countryTipData.transportation}</Text>
             <Text style={styles.countryTitle}>Accomodation:</Text>
-            <Text style={styles.countryText}>{this.state.data.accommodation}</Text>
+            <Text style={styles.countryText}>{this.state.countryTipData.accommodation}</Text>
             <Text style={styles.countryTitle}>Currency:</Text>
-            <Text style={styles.countryText}>{this.state.data.currency}</Text>
+            <Text style={styles.countryText}>1 USD = {this.state.countryTipData.currency} {this.state.currencyData.conversion}</Text>
             <Text style={styles.countryTitle}>Thank you:</Text>
-            <Text style={styles.countryText}>{this.state.data.thankyou}</Text>
+            <Text style={styles.countryText}>{this.state.countryTipData.thankyou}</Text>
             <Text style={styles.countryTitle}>Goodbye:</Text>
-            <Text style={styles.countryText}>{this.state.data.goodbye}</Text>
+            <Text style={styles.countryText}>{this.state.countryTipData.goodbye}</Text>
           </View>
         </View>
       );
