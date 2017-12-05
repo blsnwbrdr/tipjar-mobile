@@ -17,67 +17,48 @@ data.sort(compare);
 export class List extends Component {
   state = {
     data: data,
-    viewOne: true,
   };
 
   constructor(props) {
     super(props);
-    this.changeView = this.changeView.bind(this);
-  };
-
-  onPressLocation() {
-    this.setState({
-      viewOne: true
-    });
+    this.onPressTipData = this.onPressTipData.bind(this);
+    this.onPressList = this.onPressList.bind(this);
+    this.state = {listView: true,data: data,};
   }
 
-  changeView(country){
+  onPressTipData(country){
     for ( var x = 0; x < data.length; x++) {
       if (country === data[x].country) {
         this.setState({
-         viewOne: !this.state.viewOne,
+         listView: false,
          data: data[x],
         })
       }
     }
   }
 
-  render() {
+  onPressList() {
+    this.setState({
+      listView: true,
+      data: data,
+    });
+  }
 
-    if(!this.state.viewOne) {
+  render() {
+    const showList = this.state.listView;
+    if(showList) {
       return (
-        <View>
-          <Button
-            onPress={ () => this.onPressLocation() }
-            title="Choose a location"
-            color="#494F56"
-            accessibilityLabel="Choose a location"
-          />
-          <View style={styles.listContainer}>
-            <Text style={styles.listText}>{this.state.data.country}</Text>
-            <Text style={styles.listText}>{this.state.data.dining}</Text>
-            <Text style={styles.listText}>{this.state.data.transportation}</Text>
-            <Text style={styles.listText}>{this.state.data.accommodation}</Text>
-            <Text style={styles.listText}>{this.state.data.currency}</Text>
-            <Text style={styles.listText}>{this.state.data.thankyou}</Text>
-            <Text style={styles.listText}>{this.state.data.goodbye}</Text>
-          </View>
-        </View>
-      );
-    } else if (this.state.viewOne) {
-      return (
-        <View>
-          <Button
-            onPress={ () => this.onPressLocation() }
-            title="Choose a location"
-            color="#494F56"
-            accessibilityLabel="Choose a location"
-          />
+        <View style={styles.mainContainer}>
+          <TouchableWithoutFeedback onPress={ () => this.onPressList() }>
+            <View style={styles.locationButtonContainer}>
+              <Text style={styles.locationButton}>Choose a location</Text>
+            </View>
+          </TouchableWithoutFeedback>
           <FlatList style={styles.listContainer}
             data = {this.state.data}
             keyExtractor = {(x, i) => i}
             renderItem = { ({item}) =>
-              <TouchableWithoutFeedback onPress={ () => this.changeView(item.country) }>
+              <TouchableWithoutFeedback onPress={ () => this.onPressTipData(item.country) }>
                 <View>
                   <Text style={styles.listText}>{item.country}</Text>
                 </View>
@@ -86,9 +67,27 @@ export class List extends Component {
           />
         </View>
       );
+    } else {
+      return (
+        <View style={styles.mainContainer}>
+          <TouchableWithoutFeedback onPress={ () => this.onPressList() }>
+            <View style={styles.locationButtonContainer}>
+              <Text style={styles.locationButton}>Choose a location</Text>
+            </View>
+          </TouchableWithoutFeedback>
+          <View style={styles.countryContainer}>
+            <Text style={styles.countryText}>{this.state.data.country}</Text>
+            <Text style={styles.countryText}>{this.state.data.dining}</Text>
+            <Text style={styles.countryText}>{this.state.data.transportation}</Text>
+            <Text style={styles.countryText}>{this.state.data.accommodation}</Text>
+            <Text style={styles.countryText}>{this.state.data.currency}</Text>
+            <Text style={styles.countryText}>{this.state.data.thankyou}</Text>
+            <Text style={styles.countryText}>{this.state.data.goodbye}</Text>
+          </View>
+        </View>
+      );
     }
   }
-
 }
 
 // STYLE VARIABLES
@@ -97,17 +96,38 @@ const secondaryColor = '#B57A42';
 
 // STYLESHEET
 const styles = StyleSheet.create({
-  buttonText: {
+  mainContainer: {
+    alignItems: 'center',
+  },
+  locationButtonContainer: {
+    width: 200,
+    borderRadius: 50,
+    borderColor: primaryColor,
+    borderWidth: 2,
+    paddingTop: 10,
+    paddingBottom: 10,
+    paddingLeft: 8,
+    paddingRight: 8,
+  },
+  locationButton: {
     fontFamily: 'hind',
-    fontSize: 20,
+    fontSize: 22,
+    textAlign: 'center',
     color: primaryColor,
-    marginTop: 10,
-    marginBottom: 10,
   },
   listContainer: {
     marginTop: 30,
   },
   listText: {
+    fontFamily: 'hind',
+    fontSize: 18,
+    color: primaryColor,
+    textAlign: 'center',
+  },
+  countryContainer: {
+    marginTop: 30,
+  },
+  countryText: {
     fontFamily: 'hind',
     fontSize: 18,
     color: primaryColor,
