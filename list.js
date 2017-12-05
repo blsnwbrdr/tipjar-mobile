@@ -76,12 +76,18 @@ export class List extends Component {
             </View>
           </TouchableWithoutFeedback>
           <View style={styles.countryContainer}>
-            <Text style={styles.countryText}>{this.state.data.country}</Text>
+            <Text style={styles.countryHeader}>{this.state.data.country}</Text>
+            <Text style={styles.countryTitle}>Dining:</Text>
             <Text style={styles.countryText}>{this.state.data.dining}</Text>
+            <Text style={styles.countryTitle}>Transportation:</Text>
             <Text style={styles.countryText}>{this.state.data.transportation}</Text>
+            <Text style={styles.countryTitle}>Accomodation:</Text>
             <Text style={styles.countryText}>{this.state.data.accommodation}</Text>
+            <Text style={styles.countryTitle}>Currency:</Text>
             <Text style={styles.countryText}>{this.state.data.currency}</Text>
+            <Text style={styles.countryTitle}>Thank you:</Text>
             <Text style={styles.countryText}>{this.state.data.thankyou}</Text>
+            <Text style={styles.countryTitle}>Goodbye:</Text>
             <Text style={styles.countryText}>{this.state.data.goodbye}</Text>
           </View>
         </View>
@@ -123,14 +129,33 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: primaryColor,
     textAlign: 'center',
+    paddingBottom: 10,
   },
   countryContainer: {
     marginTop: 30,
+    paddingLeft: 25,
+    paddingRight: 25,
+  },
+  countryHeader: {
+    fontFamily: 'patrick-hand',
+    fontSize: 42,
+    color: secondaryColor,
+    textAlign: 'center',
+    paddingBottom: 20,
+  },
+  countryTitle: {
+    fontFamily: 'hind',
+    fontSize: 22,
+    color: primaryColor,
+    textAlign: 'center',
+    textDecorationLine: 'underline',
+    textDecorationColor: secondaryColor,
   },
   countryText: {
     fontFamily: 'hind',
     fontSize: 18,
     color: primaryColor,
     textAlign: 'center',
+    paddingBottom: 15,
   }
 });

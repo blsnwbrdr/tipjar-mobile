@@ -64,6 +64,7 @@ const styles = StyleSheet.create({
   contentContainer: {
     alignItems: 'center',
     paddingTop: 30,
+    paddingBottom: 50,
   },
   headerContainer: {
     alignItems: 'center',
