@@ -1,21 +1,18 @@
 {
   "expo": {
-    "name": "tipjar-mobile",
-    "description": "An empty new project",
+    "name": "Tip Jar",
+    "description": "A globetrotting guide to gratuity",
+    "version": "1.0.0",
     "slug": "tipjar-mobile",
     "privacy": "public",
     "sdkVersion": "23.0.0",
-    "version": "1.0.0",
     "orientation": "portrait",
-    "primaryColor": "#cccccc",
-    "icon": "./assets/icon.png",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
+    "icon": "./assets/tipjar-icon.png",
     "ios": {
-      "supportsTablet": true
+      "bundleIdentifier": "com.brandonscode.tipjar"
+    },
+    "android": {
+      "package": "com.brandonscode.tipjar"
     }
   }
 }
