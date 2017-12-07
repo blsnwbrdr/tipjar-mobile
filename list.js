@@ -16,6 +16,11 @@ function compare(a,b) {
 countryTipData.sort(compare);
 
 export class List extends Component {
+
+  // componentDidUpdate() {
+  //   this.scrollTo(0)
+  // }
+
   constructor(props) {
     super(props);
     this.onPressTipData = this.onPressTipData.bind(this);
@@ -50,7 +55,7 @@ export class List extends Component {
     const showList = this.state.listView;
     if(showList) {
       return (
-        <View style={styles.mainContainer}>
+        <View style={styles.mainContainer} ref="scrollView">
           <TouchableWithoutFeedback onPress={ () => this.onPressList() }>
             <View style={styles.locationButtonContainer}>
               <Text style={styles.locationButton}>Choose a location</Text>
@@ -71,7 +76,7 @@ export class List extends Component {
       );
     } else {
       return (
-        <View style={styles.mainContainer}>
+        <View style={styles.mainContainer} ref="scrollView">
           <TouchableWithoutFeedback onPress={ () => this.onPressList() }>
             <View style={styles.locationButtonContainer}>
               <Text style={styles.locationButton}>Choose a location</Text>

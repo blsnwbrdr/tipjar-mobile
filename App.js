@@ -8,6 +8,9 @@ export default class App extends Component {
     isLoadingComplete: false,
   };
 
+  onPressList() {
+    this.refs.scrollView.scrollTo({y:0})
+  }
   render() {
     if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
       return (
@@ -20,12 +23,13 @@ export default class App extends Component {
     } else {
       return (
         <View style={styles.container}>
-          <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+          <View style={styles.statusBar}></View>
+          <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer} ref="scrollView">
             <View style={styles.headerContainer}>
               <Text style={styles.titleText}>TIP JAR</Text>
               <Text style={styles.subTitleText}>A globetrotting guide to gratuity</Text>
             </View>
-            <List />
+            <List onChange={ () => this.onPressList() }/>
           </ScrollView>
         </View>
       );
@@ -60,14 +64,17 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
   },
+  statusBar: {
+    height: 40,
+    backgroundColor: '#565656',
+  },
   contentContainer: {
     alignItems: 'center',
-    paddingTop: 30,
     paddingBottom: 50,
   },
   headerContainer: {
     alignItems: 'center',
-    marginTop: 30,
+    marginTop: 10,
     marginBottom: 30,
   },
   titleText: {
@@ -81,5 +88,12 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: primaryColor,
     marginBottom: 10,
+  },
+  topButton: {
+    paddingTop: 20,
+    backgroundColor: 'black',
+  },
+  top: {
+    color: 'black',
   },
 });
