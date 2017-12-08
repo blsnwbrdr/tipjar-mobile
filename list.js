@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, ScrollView, FlatList, TouchableWithoutFeedback } from 'react-native';
+import { FontAwesome } from '@expo/vector-icons';
 
 // JSON DATA
 const countryTipData = require('./data/countryTipData.json');
@@ -80,14 +81,29 @@ export class List extends Component {
           <ScrollView ref="scrollView">
             <View style={styles.countryContainer}>
               <Text style={styles.countryHeader}>{this.state.countryTipData.country}</Text>
+              <Text style={styles.countryIcon}>
+                <FontAwesome name="cutlery" size={32} color="#494F56" />
+              </Text>
               <Text style={styles.countryTitle}>Dining:</Text>
               <Text style={styles.countryText}>{this.state.countryTipData.dining}</Text>
+              <Text style={styles.countryIcon}>
+                <FontAwesome name="taxi" size={32} color="#494F56" />
+              </Text>
               <Text style={styles.countryTitle}>Transportation:</Text>
               <Text style={styles.countryText}>{this.state.countryTipData.transportation}</Text>
+              <Text style={styles.countryIcon}>
+                <FontAwesome name="building" size={32} color="#494F56" />
+              </Text>
               <Text style={styles.countryTitle}>Accomodation:</Text>
               <Text style={styles.countryText}>{this.state.countryTipData.accommodation}</Text>
+              <Text style={styles.countryIcon}>
+                <FontAwesome name="money" size={32} color="#494F56" />
+              </Text>
               <Text style={styles.countryTitle}>Currency:</Text>
               <Text style={styles.countryText}>1 USD = {this.state.countryTipData.currency} {this.state.currencyData.conversion}</Text>
+              <Text style={styles.countryIcon}>
+                <FontAwesome name="language" size={32} color="#494F56" />
+              </Text>
               <Text style={styles.countryTitle}>Thank you:</Text>
               <Text style={styles.countryText}>{this.state.countryTipData.thankyou}</Text>
               <Text style={styles.countryTitle}>Goodbye:</Text>
@@ -172,5 +188,10 @@ const styles = StyleSheet.create({
     color: colorDarkGrey,
     textAlign: 'center',
     paddingBottom: 15,
+  },
+  countryIcon: {
+    textAlign: 'center',
+    paddingTop: 20,
+    paddingBottom: 10,
   }
 });

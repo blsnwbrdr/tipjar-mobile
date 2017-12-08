@@ -1,5 +1,5 @@
 {
-  "name": "tip jar mobile app",
+  "name": "tip-jar-mobile-app",
   "version": "1.0.0",
   "description": "gratuity app built with react native",
   "author": "brandon",
@@ -9,6 +9,7 @@
     "expo": "^23.0.0",
     "react": "16.0.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-23.0.0.tar.gz",
+    "react-native-fontawesome": "^5.7.0",
     "react-navigation": "^1.0.0-beta.21"
   }
 }
