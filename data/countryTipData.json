@@ -316,12 +316,12 @@
   },
   {
     "country": "Estonia",
-    "dining": "For smaller restaurants, leave 10 to 20 EEK. For nicer restaurants, tip 5% to 8%.",
+    "dining": "It is common to leave up to 10%.",
     "transportation": "Taxis - round up the fare.",
-    "accommodation": "Porters - 15 EEK per bag.",
+    "accommodation": "Porters - 1 EUR per bag.",
     "thankyou": "Aitah",
     "goodbye": "Huvasti",
-    "currency": "EEK"
+    "currency": "EUR"
   },
   {
     "country": "France",

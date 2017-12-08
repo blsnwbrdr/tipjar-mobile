@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, ScrollView, Button, Alert, FlatList, TouchableWithoutFeedback } from 'react-native';
+import { StyleSheet, Text, View, StatusBar } from 'react-native';
 import { AppLoading, Font } from 'expo';
 import { List } from './list.js';
 
@@ -23,14 +23,12 @@ export default class App extends Component {
     } else {
       return (
         <View style={styles.container}>
-          <View style={styles.statusBar}></View>
-          <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer} ref="scrollView">
-            <View style={styles.headerContainer}>
-              <Text style={styles.titleText}>TIP JAR</Text>
-              <Text style={styles.subTitleText}>A globetrotting guide to gratuity</Text>
-            </View>
-            <List onChange={ () => this.onPressList() }/>
-          </ScrollView>
+          <StatusBar barStyle="dark-content" />
+          <View style={styles.headerContainer}>
+            <Text style={styles.titleText}>TIP JAR</Text>
+            <Text style={styles.subTitleText}>A globetrotting guide to gratuity</Text>
+          </View>
+          <List />
         </View>
       );
     }
@@ -55,45 +53,30 @@ export default class App extends Component {
 }
 
 // STYLE VARIABLES
-const primaryColor = '#494F56';
-const secondaryColor = '#B57A42';
+const colorDarkGrey = '#494F56';
+const colorOrange = '#B57A42';
+const colorLightGrey = "#F0F0F0";
 
 // STYLESHEET
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-  },
-  statusBar: {
-    height: 40,
-    backgroundColor: '#565656',
-  },
-  contentContainer: {
-    alignItems: 'center',
-    paddingBottom: 50,
+    backgroundColor: 'white',
   },
   headerContainer: {
     alignItems: 'center',
-    marginTop: 10,
-    marginBottom: 30,
+    marginTop: 30,
+    marginBottom: 20,
   },
   titleText: {
     fontFamily: 'patrick-hand',
-    fontSize: 80,
-    color: secondaryColor,
-    marginBottom: 15,
+    fontSize: 60,
+    color: colorOrange,
+    marginBottom: 0,
   },
   subTitleText: {
     fontFamily: 'nothing-you-could-do',
-    fontSize: 18,
-    color: primaryColor,
-    marginBottom: 10,
-  },
-  topButton: {
-    paddingTop: 20,
-    backgroundColor: 'black',
-  },
-  top: {
-    color: 'black',
+    fontSize: 16,
+    color: colorDarkGrey,
   },
 });
