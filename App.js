@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, StatusBar } from 'react-native';
 import { AppLoading, Font } from 'expo';
-import { List } from './list.js';
+import { CountryView } from './CountryView.js';
 
 export default class App extends Component {
   state = {
@@ -28,7 +28,7 @@ export default class App extends Component {
             <Text style={styles.titleText}>TIP JAR</Text>
             <Text style={styles.subTitleText}>A globetrotting guide to gratuity</Text>
           </View>
-          <List />
+          <CountryView />
         </View>
       );
     }

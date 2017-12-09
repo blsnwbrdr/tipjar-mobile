@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, ScrollView, FlatList, TouchableWithoutFeedback } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, FlatList, TouchableWithoutFeedback, TouchableOpacity } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 
 // JSON DATA
@@ -16,7 +16,7 @@ function compare(a,b) {
 }
 countryTipData.sort(compare);
 
-export class List extends Component {
+export class CountryView extends Component {
 
   constructor(props) {
     super(props);
@@ -53,16 +53,16 @@ export class List extends Component {
     if(showList) {
       return (
         <View style={styles.mainContainer}>
-          <ScrollView ref="scrollView" style={styles.scrollContainer}>
+          <ScrollView style={styles.scrollContainer}>
             <FlatList style={styles.listContainer}
               data = {this.state.countryTipData}
               keyExtractor = {(x, i) => i}
               renderItem = { ({item}) =>
-                <TouchableWithoutFeedback onPress={ () => this.onPressTipData(item.country) }>
+                <TouchableOpacity onPress={ () => this.onPressTipData(item.country) }>
                   <View>
                     <Text style={styles.listText}>{item.country}</Text>
                   </View>
-                </TouchableWithoutFeedback>
+                </TouchableOpacity>
               }
             />
           </ScrollView>
@@ -72,13 +72,13 @@ export class List extends Component {
       return (
         <View style={styles.mainContainer}>
           <View style={styles.locationButtonContainer}>
-            <TouchableWithoutFeedback onPress={ () => this.onPressList() }>
+            <TouchableOpacity onPress={ () => this.onPressList() }>
               <View style={styles.locationButton}>
                 <Text style={styles.locationButtonText}>Choose a location</Text>
               </View>
-            </TouchableWithoutFeedback>
+            </TouchableOpacity>
           </View>
-          <ScrollView ref="scrollView">
+          <ScrollView>
             <View style={styles.countryContainer}>
               <Text style={styles.countryHeader}>{this.state.countryTipData.country}</Text>
               <Text style={styles.countryIcon}>
