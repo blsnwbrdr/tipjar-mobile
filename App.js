@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, StatusBar } from 'react-native';
+import { StyleSheet, Text, View, StatusBar, TouchableOpacity } from 'react-native';
 import { AppLoading, Font } from 'expo';
-import { CountryView } from './CountryView.js';
+import { CountryViewV2 } from './CountryViewV2';
 
 export default class App extends Component {
   state = {
     isLoadingComplete: false,
   };
 
-  onPressList() {
-    this.refs.scrollView.scrollTo({y:0})
-  }
   render() {
     if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
       return (
@@ -28,7 +25,7 @@ export default class App extends Component {
             <Text style={styles.titleText}>TIP JAR</Text>
             <Text style={styles.subTitleText}>A globetrotting guide to gratuity</Text>
           </View>
-          <CountryView />
+          <CountryViewV2 />
         </View>
       );
     }
