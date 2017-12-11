@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, StatusBar, TouchableOpacity } from 'react-native';
 import { AppLoading, Font } from 'expo';
-import { CountryViewV2 } from './CountryViewV2';
+import { CountryView } from './CountryView';
+import { CalculatorModal } from './CalculatorModal';
 
 export default class App extends Component {
   state = {
@@ -25,7 +26,7 @@ export default class App extends Component {
             <Text style={styles.titleText}>TIP JAR</Text>
             <Text style={styles.subTitleText}>A globetrotting guide to gratuity</Text>
           </View>
-          <CountryViewV2 />
+          <CountryView />
         </View>
       );
     }

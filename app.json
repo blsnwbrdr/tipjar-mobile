@@ -8,6 +8,11 @@
     "sdkVersion": "23.0.0",
     "orientation": "portrait",
     "icon": "./assets/tipjar-icon.png",
+    "splash": {
+      "image": "./assets/tipjar-splash.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#ffffff"
+    },
     "ios": {
       "bundleIdentifier": "com.brandonscode.tipjar"
     },

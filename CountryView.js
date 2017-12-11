@@ -99,7 +99,7 @@ export class CountryView extends Component {
               <Text style={styles.countryIcon}>
                 <FontAwesome name="money" size={32} color="#494F56" />
               </Text>
-              <Text style={styles.countryTitle}>Currency:</Text>
+              <Text style={styles.countryTitle}>Currency*:</Text>
               <Text style={styles.countryText}>1 USD = {this.state.countryTipData.currency} {this.state.currencyData.conversion}</Text>
               <Text style={styles.countryIcon}>
                 <FontAwesome name="language" size={32} color="#494F56" />
@@ -108,6 +108,7 @@ export class CountryView extends Component {
               <Text style={styles.countryText}>{this.state.countryTipData.thankyou}</Text>
               <Text style={styles.countryTitle}>Goodbye:</Text>
               <Text style={styles.countryText}>{this.state.countryTipData.goodbye}</Text>
+              <Text style={styles.disclaimerText}>* Exchange rates are historical and periodically updated. Currency data is not live.</Text>
             </View>
           </ScrollView>
         </View>
@@ -193,5 +194,11 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     paddingTop: 20,
     paddingBottom: 10,
+  },
+  disclaimerText: {
+    fontFamily: 'hind',
+    fontSize: 12,
+    color: colorDarkGrey,
+    paddingTop: 10,
   }
 });
