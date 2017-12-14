@@ -1,9 +1,9 @@
 [
   {
     "country": "United States",
-    "dining": "15% to 20% is customary. Some restaurants include the gratuity in the bill, especially for large parties of six or more.",
-    "transportation": "Taxis - 10% to 15% is common.",
-    "accommodation": "Porters - 2 to 3 USD per bag. Housekeeping - 2 to 3 USD per night.",
+    "dining": "15% to 20% is expected. Some restaurants include the gratuity in the bill, especially for large parties of six or more.",
+    "transportation": "Taxis - 10% to 15% is customary. Tour guides - 15% to 20% is customary.",
+    "accommodation": "Porters - 1 to 3 USD per bag is expected. Housekeeping - 2 to 3 USD per night is appreciated.",
     "thankyou": "Thank you",
     "goodbye": "Goodbye",
     "currency": "USD"
@@ -91,9 +91,9 @@
   },
   {
     "country": "Argentina",
-    "dining": "10% is customary.",
-    "transportation": "Taxis - round up the fare. Tour guides - 10% to 15%.",
-    "accommodation": "Porters - a few small bills.",
+    "dining": "10% is common for good service. Tips are almost always made in cash, since there is no tip section on the credit card bill. If paying the bill in cash and you need change, you must specify that you need change or the servers will assume the rest is a tip.",
+    "transportation": "Taxis - round up the fare. Tour guides - 10% to 20% is appreciated.",
+    "accommodation": "Porters and housekeeping - a few small bills.",
     "thankyou": "Gracias",
     "goodbye": "Adios",
     "currency": "ARS"
@@ -182,8 +182,8 @@
   {
     "country": "Australia",
     "dining": "5% to 10% is common but not expected.",
-    "transportation": "Taxis - round up the fare.",
-    "accommodation": "Porters and housekeeping - tips are not expected, but a few AUD is appreciated.",
+    "transportation": "Taxis - tips are not expected, but leaving the change is common. Tour guides - tips are not expected.",
+    "accommodation": "Tips are not expected.",
     "thankyou": "Thank you",
     "goodbye": "Goodbye",
     "currency": "AUD"
@@ -460,8 +460,8 @@
   },
   {
     "country": "Austria",
-    "dining": "A 10% service charge is usually included in the bill, but rounding up is customary.",
-    "transportation": "Taxis - tip around 10%.",
+    "dining": "A service charge is usually included in the bill, but rounding up the bill or leaving up to 5% is common.",
+    "transportation": "Taxis - 10% is expected.",
     "accommodation": "Porters - 1 to 2 EUR per bag. Housekeeping - 1 to 2 EUR per night.",
     "thankyou": "Danke",
     "goodbye": "Auf wiedersehen",
@@ -568,7 +568,7 @@
   },
   {
     "country": "Uruguay",
-    "dining": "10% is customary.",
+    "dining": "10% is customary. When paying with a credit card, the VAT is deducted from the bill. You must also tell the server you would like to add the service to the credit card bill when handing over your card (you cannot add the tip to the credit card slip).",
     "transportation": "Taxis - round up the fare.",
     "accommodation": "Tips are not expected.",
     "thankyou": "Gracias",
