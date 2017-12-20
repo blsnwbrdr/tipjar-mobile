@@ -100,7 +100,7 @@ export class CountryView extends Component {
                 <FontAwesome name="money" size={32} color="#494F56" />
               </Text>
               <Text style={styles.countryTitle}>Currency*:</Text>
-              <Text style={styles.countryText}>1 USD = {this.state.countryTipData.currency} {this.state.currencyData.conversion}</Text>
+              <Text style={styles.countryText}>1 USD = {this.state.currencyData.conversion} {this.state.countryTipData.currency}</Text>
               <Text style={styles.countryIcon}>
                 <FontAwesome name="language" size={32} color="#494F56" />
               </Text>

@@ -19,7 +19,7 @@
   },
   {
     "country": "United Arab Emirates",
-    "dining": "A 10% service charge is usualy included in the bill. A few extra AED are appreciated for good service.",
+    "dining": "A 10% service charge is usualy included in the bill; however, it normally does not go to the server. A few extra AED are appreciated for good service.",
     "transportation": "Taxis - rounding up the fare is appreciated.",
     "accommodation": "Porters - 2 to 3 AED per bag.",
     "thankyou": "Shukraan",
@@ -109,9 +109,9 @@
   },
   {
     "country": "Canada",
-    "dining": "15% to 20% is customary.",
-    "transportation": "Taxis - 10% to 15% is common.",
-    "accommodation": "Porters - 1 to 3 CAD per bag. Housekeeping - 2 to 5 CAD per night",
+    "dining": "15% to 20% is expected.",
+    "transportation": "Taxis - 10% to 15% is customary.",
+    "accommodation": "Porters - 1 to 2 CAD per bag is expected. Housekeeping - 2 to 3 CAD per night is expected.",
     "thankyou": "Thank you",
     "goodbye": "Goodbye",
     "currency": "CAD"
@@ -181,7 +181,7 @@
   },
   {
     "country": "Australia",
-    "dining": "5% to 10% is common but not expected.",
+    "dining": "5% to 10% is appreciated, but not expected.",
     "transportation": "Taxis - tips are not expected, but leaving the change is common. Tour guides - tips are not expected.",
     "accommodation": "Tips are not expected.",
     "thankyou": "Thank you",
@@ -200,7 +200,7 @@
   {
     "country": "Cambodia",
     "dining": "5% to 10% is appreciated, but not expected.",
-    "transportation": "Taxis - a tip is not expected.",
+    "transportation": "Taxis - a tip is not expected, but rounding up the fare is appreciated. Tour guides - 10% is appreciated.",
     "accommodation": "Porters and housekeeping - a tip is not expected, but a few thousand KHR per bag or per night is appreciated.",
     "thankyou": "Arkoun",
     "goodbye": "Lea",
@@ -461,7 +461,7 @@
   {
     "country": "Austria",
     "dining": "A service charge is usually included in the bill, but rounding up the bill or leaving up to 5% is common.",
-    "transportation": "Taxis - 10% is expected.",
+    "transportation": "Taxis - 10% is expected. Tour guides - a few EUR is appreciated.",
     "accommodation": "Porters - 1 to 2 EUR per bag. Housekeeping - 1 to 2 EUR per night.",
     "thankyou": "Danke",
     "goodbye": "Auf wiedersehen",
@@ -469,8 +469,8 @@
   },
   {
     "country": "Belgium",
-    "dining": "A 10% service charge is already included in the bill, but rounding up is customary.",
-    "transportation": "Taxis - round up the fare.",
+    "dining": "A service charge is already included in the bill, but rounding up is customary.",
+    "transportation": "Taxis - a tip is not expected, but you may round up the fare. Tour guides - no tip is expected.",
     "accommodation": "A service charge is included in the bill, so no tip is needed.",
     "thankyou": "Dank je",
     "goodbye": "Vaarwel",
@@ -478,9 +478,9 @@
   },
   {
     "country": "Bulgaria",
-    "dining": "5% to 10% if service was not included in the bill.",
-    "transportation": "Taxis - round up the fare.",
-    "accommodation": "Porters - 1 to 2 BGN per bag. Housekeeping - 1 to 2 BGN per night.",
+    "dining": "10% is customary if service was not included in the bill.",
+    "transportation": "Taxis - round up the fare. Tour guides - 10% is customary.",
+    "accommodation": "Porters - 1 to 2 BGN per bag is appreciated. Housekeeping - 1 to 2 BGN per night is appreciated.",
     "thankyou": "Blagodarya",
     "goodbye": "Dovizhdane",
     "currency": "BGN"
@@ -574,5 +574,41 @@
     "thankyou": "Gracias",
     "goodbye": "Adios",
     "currency": "UYU"
+  },
+  {
+    "country": "Bahamas",
+    "dining": "A 15% service charge is normally included in the bill. If the service charge is not included in the bill, then leave 15%.",
+    "transportation": "Taxis - 1 to 2 BSD. Tour guides - 5% to 10% is common.",
+    "accommodation": "Porters - 1 BSD per bag is common. Housekeeping - 1 to 2 BSD per night is appreciated.",
+    "thankyou": "Thank you",
+    "goodbye": "Goodbye",
+    "currency": "BSD"
+  },
+  {
+    "country": "Bangladesh",
+    "dining": "Service is normally included in the bill, but tipping an additional 5% is appreciated for good service.",
+    "transportation": "Taxis - round up the fare. Tour guides - tips are not expected, but anything is appreciated.",
+    "accommodation": "Porters - 25 to 75 BDT per bag is common. Housekeeping - tips are not expected.",
+    "thankyou": "Dhan'yabada",
+    "goodbye": "Bidaya",
+    "currency": "BDT"
+  },
+  {
+    "country": "Barbados",
+    "dining": "A 10% to 15% service charge is normally included in the bill. Leave an additional tip for excellent service.",
+    "transportation": "Taxis - 10% is the norm. Tour guides - 10% is common.",
+    "accommodation": "Porters - 2 to 4 BBD per bag is common. Housekeeping - 4 BBD per night is appreciated.",
+    "thankyou": "Thank you",
+    "goodbye": "Goodbye",
+    "currency": "BBD"
+  },
+  {
+    "country": "Belize",
+    "dining": "If a service charge was not included in the bill, leaving about 10% is common.",
+    "transportation": "Taxis - no tip is expected. Tour guides - 10% to 15% is common.",
+    "accommodation": "Porters - a few small bills is appreciated. Housekeeping - no tip is expected.",
+    "thankyou": "Thank you",
+    "goodbye": "Goodbye",
+    "currency": "BZD"
   }
 ]
