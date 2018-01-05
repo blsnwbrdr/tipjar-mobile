@@ -33,7 +33,7 @@ export class CountryView extends Component {
             this.setState({
              listView: false,
              countryTipData: countryTipData[x],
-             currencyData: currencyData[i],
+             currencyData: Math.round(currencyData[i].conversion * 100) / 100,
             })
           }
         }
@@ -100,7 +100,7 @@ export class CountryView extends Component {
                 <FontAwesome name="money" size={32} color="#494F56" />
               </Text>
               <Text style={styles.countryTitle}>Currency*:</Text>
-              <Text style={styles.countryText}>1 USD = {this.state.currencyData.conversion} {this.state.countryTipData.currency}</Text>
+              <Text style={styles.countryText}>1 USD = {this.state.currencyData} {this.state.countryTipData.currency}</Text>
               <Text style={styles.countryIcon}>
                 <FontAwesome name="language" size={32} color="#494F56" />
               </Text>
@@ -108,7 +108,7 @@ export class CountryView extends Component {
               <Text style={styles.countryText}>{this.state.countryTipData.thankyou}</Text>
               <Text style={styles.countryTitle}>Goodbye:</Text>
               <Text style={styles.countryText}>{this.state.countryTipData.goodbye}</Text>
-              <Text style={styles.disclaimerText}>* Exchange rates are historical and periodically updated. Currency data is not live.</Text>
+              <Text style={styles.disclaimerText}>*Currency data is not live. Exchange rates are historical and periodically updated.</Text>
             </View>
           </ScrollView>
         </View>
@@ -199,6 +199,7 @@ const styles = StyleSheet.create({
     fontFamily: 'hind',
     fontSize: 12,
     color: colorDarkGrey,
+    textAlign: 'center',
     paddingTop: 10,
   }
 });
