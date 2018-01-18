@@ -58,11 +58,13 @@ export class CountryView extends Component {
               data = {this.state.countryTipData}
               keyExtractor = {(x, i) => i}
               renderItem = { ({item}) =>
-                <TouchableOpacity onPress={ () => this.onPressTipData(item.country) }>
-                  <View>
-                    <Text style={styles.listText}>{item.country}</Text>
-                  </View>
-                </TouchableOpacity>
+                <View style={styles.listButtonContainer}>
+                  <TouchableOpacity onPress={ () => this.onPressTipData(item.country) }>
+                    <View style={styles.listButton}>
+                      <Text style={styles.listButtonText}>{item.country}</Text>
+                    </View>
+                  </TouchableOpacity>
+                </View>
               }
             />
           </ScrollView>
@@ -155,12 +157,17 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 40,
   },
-  listText: {
+  listButtonContainer: {
+    alignItems: 'center',
+    paddingBottom: 10,
+  },
+  listButtonText: {
     fontFamily: 'hind',
     fontSize: 18,
     color: colorDarkGrey,
     textAlign: 'center',
-    paddingBottom: 10,
+    paddingLeft: 20,
+    paddingRight: 20,
   },
   countryContainer: {
     marginTop: 20,
