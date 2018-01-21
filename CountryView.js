@@ -67,6 +67,9 @@ export class CountryView extends Component {
                 </View>
               }
             />
+            <View>
+              <Text style={styles.versionText}>v1.1.0</Text>
+            </View>
           </ScrollView>
         </View>
       );
@@ -208,5 +211,12 @@ const styles = StyleSheet.create({
     color: colorDarkGrey,
     textAlign: 'center',
     paddingTop: 10,
+  },
+  versionText: {
+    fontFamily: 'hind',
+    fontSize: 12,
+    color: colorDarkGrey,
+    textAlign: 'center',
+    paddingBottom: 20,
   }
 });

@@ -14,10 +14,8 @@
       "backgroundColor": "#3E2916"
     },
     "ios": {
-      "bundleIdentifier": "com.brandonscode.tipjar"
-    },
-    "android": {
-      "package": "com.brandonscode.tipjar"
+      "bundleIdentifier": "com.brandonscode.tipjar",
+      "buildNumber": "1.1.0"
     }
   }
 }
