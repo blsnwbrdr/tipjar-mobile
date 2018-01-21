@@ -2,7 +2,7 @@
   "expo": {
     "name": "Tip Jar",
     "description": "A globetrotting guide to gratuity",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "slug": "tipjar-mobile",
     "privacy": "public",
     "sdkVersion": "23.0.0",
