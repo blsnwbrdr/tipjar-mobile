@@ -27,6 +27,7 @@ export default class App extends Component {
             <Text style={styles.subTitleText}>A globetrotting guide to gratuity</Text>
           </View>
           <CountryView />
+          <CalculatorModal />
         </View>
       );
     }
