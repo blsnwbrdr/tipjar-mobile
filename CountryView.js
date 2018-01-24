@@ -68,7 +68,7 @@ export class CountryView extends Component {
               }
             />
             <View>
-              <Text style={styles.versionText}>v1.1.0</Text>
+              <Text style={styles.versionText}>v1.2.0</Text>
             </View>
           </ScrollView>
         </View>
