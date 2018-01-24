@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, StatusBar, TouchableOpacity } from 'react-native';
+import { SafeAreaView, StatusBar, View, Text, TouchableOpacity } from 'react-native';
 import { AppLoading, Font } from 'expo';
-import { CountryView } from './CountryView';
+import { CountryListing } from './CountryListing';
 import { CalculatorModal } from './CalculatorModal';
+import Styles from './styles/Styles';
 
 export default class App extends Component {
   state = {
@@ -20,13 +21,13 @@ export default class App extends Component {
       );
     } else {
       return (
-        <View style={styles.container}>
+        <View style={Styles.container}>
           <StatusBar barStyle="dark-content" />
-          <View style={styles.headerContainer}>
-            <Text style={styles.titleText}>TIP JAR</Text>
-            <Text style={styles.subTitleText}>A globetrotting guide to gratuity</Text>
+          <View style={Styles.headerContainer}>
+            <Text style={Styles.titleText}>TIP JAR</Text>
+            <Text style={Styles.subTitleText}>A globetrotting guide to gratuity</Text>
           </View>
-          <CountryView />
+          <CountryListing />
           <CalculatorModal />
         </View>
       );
@@ -47,35 +48,8 @@ export default class App extends Component {
     console.warn(error);
   };
   _handleFinishLoading = () => {
-    this.setState({ isLoadingComplete: true });
+    this.setState({
+      isLoadingComplete: true
+    });
   };
 }
-
-// STYLE VARIABLES
-const colorDarkGrey = '#494F56';
-const colorOrange = '#B57A42';
-const colorLightGrey = "#F0F0F0";
-
-// STYLESHEET
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'white',
-  },
-  headerContainer: {
-    alignItems: 'center',
-    marginTop: 30,
-    marginBottom: 20,
-  },
-  titleText: {
-    fontFamily: 'patrick-hand',
-    fontSize: 60,
-    color: colorOrange,
-    marginBottom: 0,
-  },
-  subTitleText: {
-    fontFamily: 'nothing-you-could-do',
-    fontSize: 16,
-    color: colorDarkGrey,
-  },
-});

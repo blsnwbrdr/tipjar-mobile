@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, TouchableHighlight } from 'react-native';
 import Modal from 'react-native-modal';
-import { FontAwesome } from '@expo/vector-icons';
+import CalculatorStyles from './styles/CalculatorStyles';
 
 export class CalculatorModal extends Component {
   constructor(props) {
@@ -15,16 +15,21 @@ export class CalculatorModal extends Component {
     }
   }
 
-  onPressOpenModal() {
+  // LAUNCH CALCULATOR
+  onPressLaunchCalculator() {
     this.setState({
       isModalVisible: true
     })
   }
-  onPressCloseModal() {
+
+  // CLOSE CALCULATOR
+  onPressCloseCalculator() {
     this.setState({
       isModalVisible: false
     })
   }
+
+  // NUMBER BUTTON PRESS
   onPressCalcButton(input) {
     if (this.state.digits < 8) {
       let newDigits = this.state.digits + 1;
@@ -46,9 +51,10 @@ export class CalculatorModal extends Component {
           inputValue: inputValue
         })
       }
-      console.log(newDigits);
     }
   }
+
+  // PERCENT BUTTON PRESS
   onPressPercentButton(percent) {
     this.setState({
       digits: 0,
@@ -69,7 +75,9 @@ export class CalculatorModal extends Component {
       })
     }
   }
-  onPressClear() {
+
+  // CLEAR BUTTON PRESS
+  onPressClearButton() {
     this.setState({
       inputValue: 0,
       percentPressed: false,
@@ -80,122 +88,121 @@ export class CalculatorModal extends Component {
   render() {
     return (
       <View>
-        <TouchableOpacity style={styles.calculatorLaunchButton} onPress={ () => this.onPressOpenModal() }>
-          <Text style={styles.calculatorLaunchButtonText}>Calculator</Text>
+        <TouchableOpacity style={CalculatorStyles.launchButton} onPress={ () => this.onPressLaunchCalculator() }>
+          <Text style={CalculatorStyles.launchButtonText}>Calculator</Text>
         </TouchableOpacity>
         <Modal
           isVisible={this.state.isModalVisible}
         >
-          <View style={styles.modalContainer}>
-            <View style={styles.calcDisplay}>
-              <Text style={styles.calcDisplayText}>{this.state.inputValue}</Text>
+          <View style={CalculatorStyles.modalContainer}>
+            <View style={CalculatorStyles.displayContainer}>
+              <Text style={CalculatorStyles.displayText}>{this.state.inputValue}</Text>
             </View>
-            <View style={styles.calcPad}>
-              <View style={styles.calcRow}>
+            <View style={CalculatorStyles.calcPad}>
+              <View style={CalculatorStyles.calcRow}>
                 <TouchableHighlight
-                  style={styles.calcButton}
+                  style={CalculatorStyles.calcButton}
                   underlayColor="white"
                   onPress={ () => this.onPressPercentButton(.05) }>
-                  <Text style={styles.calcButtonText}>5%</Text>
+                  <Text style={CalculatorStyles.calcButtonText}>5%</Text>
                 </TouchableHighlight>
                 <TouchableHighlight
-                  style={styles.calcButton}
+                  style={CalculatorStyles.calcButton}
                   underlayColor="white"
                   onPress={ () => this.onPressPercentButton(.1) }>
-                  <Text style={styles.calcButtonText}>10%</Text>
+                  <Text style={CalculatorStyles.calcButtonText}>10%</Text>
                 </TouchableHighlight>
                 <TouchableHighlight
-                  style={styles.calcButton}
+                  style={CalculatorStyles.calcButton}
                   underlayColor="white"
                   onPress={ () => this.onPressPercentButton(.15) }>
-                  <Text style={styles.calcButtonText}>15%</Text>
+                  <Text style={CalculatorStyles.calcButtonText}>15%</Text>
                 </TouchableHighlight>
                 <TouchableHighlight
-                  style={styles.calcButton}
+                  style={CalculatorStyles.calcButton}
                   underlayColor="white"
                   onPress={ () => this.onPressPercentButton(.2) }>
-                  <Text style={styles.calcButtonText}>20%</Text>
+                  <Text style={CalculatorStyles.calcButtonText}>20%</Text>
                 </TouchableHighlight>
               </View>
-              <View style={styles.calcRow}>
+              <View style={CalculatorStyles.calcRow}>
                 <TouchableHighlight
-                  style={styles.numberButton}
+                  style={CalculatorStyles.calcNumberButton}
                   underlayColor="white"
                   onPress={ () => this.onPressCalcButton(1) }>
-                  <Text style={styles.calcButtonText}>1</Text>
+                  <Text style={CalculatorStyles.calcButtonText}>1</Text>
                 </TouchableHighlight>
                 <TouchableHighlight
-                  style={styles.numberButton}
+                  style={CalculatorStyles.calcNumberButton}
                   underlayColor="white"
                   onPress={ () => this.onPressCalcButton(2) }>
-                  <Text style={styles.calcButtonText}>2</Text>
+                  <Text style={CalculatorStyles.calcButtonText}>2</Text>
                 </TouchableHighlight>
                 <TouchableHighlight
-                  style={styles.numberButton}
+                  style={CalculatorStyles.calcNumberButton}
                   underlayColor="white"
                   onPress={ () => this.onPressCalcButton(3) }>
-                  <Text style={styles.calcButtonText}>3</Text>
+                  <Text style={CalculatorStyles.calcButtonText}>3</Text>
                 </TouchableHighlight>
               </View>
-              <View style={styles.calcRow}>
+              <View style={CalculatorStyles.calcRow}>
                 <TouchableHighlight
-                  style={styles.numberButton}
+                  style={CalculatorStyles.calcNumberButton}
                   underlayColor="white"
                   onPress={ () => this.onPressCalcButton(4) }>
-                  <Text style={styles.calcButtonText}>4</Text>
+                  <Text style={CalculatorStyles.calcButtonText}>4</Text>
                 </TouchableHighlight>
                 <TouchableHighlight
-                  style={styles.numberButton}
+                  style={CalculatorStyles.calcNumberButton}
                   underlayColor="white"
                   onPress={ () => this.onPressCalcButton(5) }>
-                  <Text style={styles.calcButtonText}>5</Text>
+                  <Text style={CalculatorStyles.calcButtonText}>5</Text>
                 </TouchableHighlight>
                 <TouchableHighlight
-                  style={styles.numberButton}
+                  style={CalculatorStyles.calcNumberButton}
                   underlayColor="white"
                   onPress={ () => this.onPressCalcButton(6) }>
-                  <Text style={styles.calcButtonText}>6</Text>
+                  <Text style={CalculatorStyles.calcButtonText}>6</Text>
                 </TouchableHighlight>
               </View>
-              <View style={styles.calcRow}>
+              <View style={CalculatorStyles.calcRow}>
                 <TouchableHighlight
-                  style={styles.numberButton}
+                  style={CalculatorStyles.calcNumberButton}
                   underlayColor="white"
                   onPress={ () => this.onPressCalcButton(7) }>
-                  <Text style={styles.calcButtonText}>7</Text>
+                  <Text style={CalculatorStyles.calcButtonText}>7</Text>
                 </TouchableHighlight>
                 <TouchableHighlight
-                  style={styles.numberButton}
+                  style={CalculatorStyles.calcNumberButton}
                   underlayColor="white"
                   onPress={ () => this.onPressCalcButton(8) }>
-                  <Text style={styles.calcButtonText}>8</Text>
+                  <Text style={CalculatorStyles.calcButtonText}>8</Text>
                 </TouchableHighlight>
                 <TouchableHighlight
-                  style={styles.numberButton}
+                  style={CalculatorStyles.calcNumberButton}
                   underlayColor="white"
-                  value='9'
                   onPress={ () => this.onPressCalcButton(9) }>
-                  <Text style={styles.calcButtonText}>9</Text>
+                  <Text style={CalculatorStyles.calcButtonText}>9</Text>
                 </TouchableHighlight>
               </View>
-              <View style={styles.calcRow}>
+              <View style={CalculatorStyles.calcRow}>
                 <TouchableHighlight
-                  style={styles.calcButton}
+                  style={CalculatorStyles.calcButton}
                   underlayColor="white"
-                  onPress={ () => this.onPressCloseModal() }>
-                  <Text style={styles.calcButtonText}>close</Text>
+                  onPress={ () => this.onPressCloseCalculator() }>
+                  <Text style={CalculatorStyles.calcButtonText}>close</Text>
                 </TouchableHighlight>
                 <TouchableHighlight
-                  style={styles.numberButton}
+                  style={CalculatorStyles.calcNumberButton}
                   underlayColor="white"
                   onPress={ () => this.onPressCalcButton(0) }>
-                  <Text style={styles.calcButtonText}>0</Text>
+                  <Text style={CalculatorStyles.calcButtonText}>0</Text>
                 </TouchableHighlight>
                 <TouchableHighlight
-                  style={styles.calcButton}
+                  style={CalculatorStyles.calcButton}
                   underlayColor="white"
-                  onPress={ () => this.onPressClear() }>
-                  <Text style={styles.calcButtonText}>C</Text>
+                  onPress={ () => this.onPressClearButton() }>
+                  <Text style={CalculatorStyles.calcButtonText}>C</Text>
                 </TouchableHighlight>
               </View>
             </View>
@@ -205,74 +212,3 @@ export class CalculatorModal extends Component {
     )
   }
 }
-
-// STYLE VARIABLES
-const colorDarkGrey = '#494F56';
-const colorOrange = '#B57A42';
-const colorLightGrey = "#F0F0F0";
-const colorBlue = '#427DB5';
-const colorLightBlue = '#D0DFEC';
-
-// STYLESHEET
-const styles = StyleSheet.create({
-  modalContainer: {
-    flex: 1,
-    paddingTop: 75,
-    paddingBottom: 25,
-  },
-  calculatorLaunchButton: {
-    backgroundColor: colorOrange,
-    paddingTop: 10,
-    paddingBottom: 10,
-  },
-  calculatorLaunchButtonText: {
-    fontFamily: 'hind',
-    fontSize: 22,
-    textAlign: 'center',
-    color: 'white',
-  },
-  closeButton: {
-    alignItems: 'flex-end',
-    paddingTop: 20,
-  },
-  calcDisplay: {
-    flex: 1,
-    backgroundColor: 'black',
-    justifyContent: 'flex-end',
-  },
-  calcDisplayText: {
-    fontFamily: 'hind',
-    color: 'white',
-    fontSize: 64,
-    textAlign: 'right',
-    padding: 10,
-  },
-  calcPad: {
-    flex: 9,
-    backgroundColor: colorLightGrey,
-  },
-  calcRow: {
-    flex: 1,
-    flexDirection: 'row',
-  },
-  calcButton: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: colorLightBlue,
-    borderWidth: 1,
-    borderColor: colorBlue,
-  },
-  numberButton: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderWidth: 1,
-    borderColor: colorBlue,
-  },
-  calcButtonText: {
-    fontFamily: 'hind',
-    fontSize: 22,
-    color: 'black',
-  }
-});
