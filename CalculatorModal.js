@@ -31,14 +31,15 @@ export class CalculatorModal extends Component {
 
   // NUMBER BUTTON PRESS
   onPressCalcButton(input) {
-    if (this.state.digits < 8) {
+    if (this.state.digits < 5) {
       let newDigits = this.state.digits + 1;
       this.setState({
         digits: newDigits,
       })
       if (this.state.inputValue === 0) {
         this.setState({
-          inputValue: input
+          inputValue: input,
+          digits: 0,
         })
       } else if (this.state.percentPressed === true) {
         this.setState({
@@ -99,27 +100,27 @@ export class CalculatorModal extends Component {
               <Text style={CalculatorStyles.displayText}>{this.state.inputValue}</Text>
             </View>
             <View style={CalculatorStyles.calcPad}>
-              <View style={CalculatorStyles.calcRow}>
+              <View style={CalculatorStyles.percentRow}>
                 <TouchableHighlight
-                  style={CalculatorStyles.calcButton}
+                  style={CalculatorStyles.calcPercentButton}
                   underlayColor="white"
                   onPress={ () => this.onPressPercentButton(.05) }>
                   <Text style={CalculatorStyles.calcButtonText}>5%</Text>
                 </TouchableHighlight>
                 <TouchableHighlight
-                  style={CalculatorStyles.calcButton}
+                  style={CalculatorStyles.calcPercentButton}
                   underlayColor="white"
                   onPress={ () => this.onPressPercentButton(.1) }>
                   <Text style={CalculatorStyles.calcButtonText}>10%</Text>
                 </TouchableHighlight>
                 <TouchableHighlight
-                  style={CalculatorStyles.calcButton}
+                  style={CalculatorStyles.calcPercentButton}
                   underlayColor="white"
                   onPress={ () => this.onPressPercentButton(.15) }>
                   <Text style={CalculatorStyles.calcButtonText}>15%</Text>
                 </TouchableHighlight>
                 <TouchableHighlight
-                  style={CalculatorStyles.calcButton}
+                  style={CalculatorStyles.calcPercentButton}
                   underlayColor="white"
                   onPress={ () => this.onPressPercentButton(.2) }>
                   <Text style={CalculatorStyles.calcButtonText}>20%</Text>
@@ -187,7 +188,7 @@ export class CalculatorModal extends Component {
               </View>
               <View style={CalculatorStyles.calcRow}>
                 <TouchableHighlight
-                  style={CalculatorStyles.calcButton}
+                  style={CalculatorStyles.calcOtherButton}
                   underlayColor="white"
                   onPress={ () => this.onPressCloseCalculator() }>
                   <Text style={CalculatorStyles.calcButtonText}>close</Text>
@@ -199,7 +200,7 @@ export class CalculatorModal extends Component {
                   <Text style={CalculatorStyles.calcButtonText}>0</Text>
                 </TouchableHighlight>
                 <TouchableHighlight
-                  style={CalculatorStyles.calcButton}
+                  style={CalculatorStyles.calcOtherButton}
                   underlayColor="white"
                   onPress={ () => this.onPressClearButton() }>
                   <Text style={CalculatorStyles.calcButtonText}>C</Text>

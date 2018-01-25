@@ -111,7 +111,7 @@ const Styles = StyleSheet.create({
     fontSize: 12,
     color: colorDarkGrey,
     textAlign: 'center',
-    paddingBottom: 20,
+    paddingBottom: 30,
   }
 });
 

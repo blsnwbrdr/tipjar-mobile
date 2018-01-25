@@ -73,7 +73,7 @@ export class CountryListing extends Component {
               }
             />
             <View>
-              <Text style={Styles.versionText}>v1.2.0</Text>
+              <Text style={Styles.versionText}>v1.2.1</Text>
             </View>
           </ScrollView>
         </View>

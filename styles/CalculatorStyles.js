@@ -39,23 +39,41 @@ const CalculatorStyles = StyleSheet.create({
     backgroundColor: colorLightGrey,
   },
   calcRow: {
-    flex: 1,
+    flex: 3,
     flexDirection: 'row',
   },
-  calcButton: {
+  percentRow: {
+    flex: 2,
+    flexDirection: 'row',
+  },
+  calcPercentButton: {
     flex: 1,
+    margin: 5,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: colorLightBlue,
     borderWidth: 1,
     borderColor: colorBlue,
+    borderRadius: 5,
   },
   calcNumberButton: {
     flex: 1,
+    margin: 5,
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 1,
     borderColor: colorBlue,
+    borderRadius: 5,
+  },
+  calcOtherButton: {
+    flex: 1,
+    margin: 5,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: colorLightBlue,
+    borderWidth: 1,
+    borderColor: colorBlue,
+    borderRadius: 5,
   },
   calcButtonText: {
     fontFamily: 'hind',
