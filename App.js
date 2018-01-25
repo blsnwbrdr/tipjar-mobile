@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { SafeAreaView, StatusBar, View, Text, TouchableOpacity } from 'react-native';
+import { StatusBar, View, Text, TouchableOpacity } from 'react-native';
 import { AppLoading, Font } from 'expo';
 import { CountryListing } from './CountryListing';
 import { CalculatorModal } from './CalculatorModal';
