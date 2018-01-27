@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { colorOrange, colorLightGrey, colorBlue, colorLightBlue } from './Constants';
+import { colorOrange, colorLightOrange, colorLightGrey, colorBlue, colorLightBlue } from './Constants';
 
 const CalculatorStyles = StyleSheet.create({
   launchButton: {
@@ -51,9 +51,9 @@ const CalculatorStyles = StyleSheet.create({
     margin: 5,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: colorLightBlue,
+    backgroundColor: colorLightOrange,
     borderWidth: 1,
-    borderColor: colorBlue,
+    borderColor: colorOrange,
     borderRadius: 5,
   },
   calcNumberButton: {
@@ -62,7 +62,7 @@ const CalculatorStyles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 1,
-    borderColor: colorBlue,
+    borderColor: colorOrange,
     borderRadius: 5,
   },
   calcOtherButton: {
@@ -70,9 +70,9 @@ const CalculatorStyles = StyleSheet.create({
     margin: 5,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: colorLightBlue,
+    backgroundColor: colorLightOrange,
     borderWidth: 1,
-    borderColor: colorBlue,
+    borderColor: colorOrange,
     borderRadius: 5,
   },
   calcButtonText: {
