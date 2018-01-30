@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { colorOrange, colorLightOrange, colorLightGrey, colorBlue, colorLightBlue } from './Constants';
+import { colorOrange, colorLightOrange, colorLightGrey } from './Constants';
 
 const CalculatorStyles = StyleSheet.create({
   launchButton: {
