@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, ScrollView, FlatList, TouchableOpacity } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
+import { UserInput } from './UserInput';
 import Styles from './styles/Styles';
 
 // JSON DATA
@@ -119,6 +120,7 @@ export class CountryListing extends Component {
               <Text style={Styles.countryTitle}>Goodbye:</Text>
               <Text style={Styles.countryText}>{this.state.countryTipData.goodbye}</Text>
               <Text style={Styles.disclaimerText}>*Currency data is not live. Exchange rates are historical and periodically updated.</Text>
+              <UserInput />
             </View>
           </ScrollView>
         </View>
