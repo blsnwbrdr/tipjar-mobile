@@ -14,11 +14,8 @@ export class UserInput extends Component {
       height
     });
     console.log(height);
-    // this.refs.scrollView.scrollTo(0)
   }
-  // textInputFocused(height) {
-  //   console.log(height);
-  // }
+
   render() {
     const {height} = this.state;
     let newStyle = {height}
@@ -28,7 +25,6 @@ export class UserInput extends Component {
         style = {[height]}
         style = {{borderColor: 'gray', borderWidth: 1, padding: 20}}
         multiline = {true}
-        // onFocus={this.textInputFocused.bind(this)}
         onContentSizeChange = {(e) => this.updateSize(e.nativeEvent.contentSize.height)}
         onChangeText = {(text) => this.setState({text})}
         value = {this.state.text}

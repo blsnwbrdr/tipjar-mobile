@@ -89,7 +89,9 @@ export class CountryListing extends Component {
               </View>
             </TouchableOpacity>
           </View>
-          <ScrollView style={Styles.scrollContainer}>
+          <ScrollView style={Styles.scrollContainer}
+          onContentSizeChange = {(e) => this.updateSize(e.nativeEvent.contentSize.height)}
+          >
             <View style={Styles.countryContainer}>
               <Text style={Styles.countryHeader}>{this.state.countryTipData.country}</Text>
               <Text style={Styles.countryIcon}>
