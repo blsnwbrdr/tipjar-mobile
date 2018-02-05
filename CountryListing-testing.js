@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, ScrollView, FlatList, TouchableOpacity } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
+import { UserInput } from './UserInput';
 import Styles from './styles/Styles';
 
 // JSON DATA
@@ -88,7 +89,9 @@ export class CountryListing extends Component {
               </View>
             </TouchableOpacity>
           </View>
-          <ScrollView style={Styles.scrollContainer}>
+          <ScrollView style={Styles.scrollContainer}
+          onContentSizeChange = {(e) => this.updateSize(e.nativeEvent.contentSize.height)}
+          >
             <View style={Styles.countryContainer}>
               <Text style={Styles.countryHeader}>{this.state.countryTipData.country}</Text>
               <Text style={Styles.countryIcon}>
