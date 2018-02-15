@@ -30,7 +30,7 @@ export class CountryListing extends Component {
   }
 
   // DISPLAY COUNTRY DATA
-  onPressTipData(country){
+  onPressTipData(country) {
     for ( var x = 0; x < countryTipData.length; x++) {
       if (country === countryTipData[x].country) {
         for ( var i = 0; i < currencyData.length; i++) {
