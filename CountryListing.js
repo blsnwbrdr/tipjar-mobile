@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { View, Text, ScrollView, FlatList, TouchableOpacity } from 'react-native';
+import { AsyncStorage, View, Text, ScrollView, FlatList, TouchableOpacity } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import Styles from './styles/Styles';
 
 // JSON DATA
 const countryTipData = require('./data/countryTipData.json');
-const currencyData = require('./data/currencyData.json');
+const currencyDataArchive = require('./data/currencyData.json');
 
 // SORT COUNTRY LIST
 function compare(a,b) {
@@ -25,19 +25,35 @@ export class CountryListing extends Component {
     this.state = {
       listView: true,
       countryTipData: countryTipData,
+      currencyData: []
     };
+  }
+
+  componentDidMount() {
+    AsyncStorage.getItem('currency-data', (err,result) => {
+      const currencyData = JSON.parse(result);
+      if (result === null) {
+        this.setState({
+          currencyData: currencyDataArchive
+        })
+      } else {
+        this.setState({
+          currencyData: currencyData
+        })
+      }
+    });
   }
 
   // DISPLAY COUNTRY DATA
   onPressTipData(country){
     for ( var x = 0; x < countryTipData.length; x++) {
       if (country === countryTipData[x].country) {
-        for ( var i = 0; i < currencyData.length; i++) {
-          if (countryTipData[x].currency === currencyData[i].currency) {
+        for ( var i = 0; i < this.state.currencyData.length; i++) {
+          if (countryTipData[x].currency === this.state.currencyData[i].currency) {
             this.setState({
              listView: false,
              countryTipData: countryTipData[x],
-             currencyData: Math.round(currencyData[i].conversion * 100) / 100,
+             countryCurrencyData: Math.round(this.state.currencyData[i].conversion * 100) / 100,
             })
           }
         }
@@ -73,7 +89,7 @@ export class CountryListing extends Component {
               }
             />
             <View>
-              <Text style={Styles.versionText}>v1.2.1</Text>
+              <Text style={Styles.versionText}>v1.2.2</Text>
             </View>
           </ScrollView>
         </View>
@@ -110,7 +126,7 @@ export class CountryListing extends Component {
                 <FontAwesome name="money" size={32} color="#494F56" />
               </Text>
               <Text style={Styles.countryTitle}>Currency*:</Text>
-              <Text style={Styles.countryText}>1 USD = {this.state.currencyData} {this.state.countryTipData.currency}</Text>
+              <Text style={Styles.countryText}>1 USD = {this.state.countryCurrencyData} {this.state.countryTipData.currency}</Text>
               <Text style={Styles.countryIcon}>
                 <FontAwesome name="language" size={32} color="#494F56" />
               </Text>

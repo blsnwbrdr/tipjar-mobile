@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StatusBar, View, Text, TouchableOpacity } from 'react-native';
+import { NetInfo, AsyncStorage, StatusBar, View, Text, TouchableOpacity } from 'react-native';
 import { AppLoading, Font } from 'expo';
 import { CountryListing } from './CountryListing';
 import { CalculatorModal } from './CalculatorModal';
@@ -9,6 +9,30 @@ export default class App extends Component {
   state = {
     isLoadingComplete: false,
   };
+
+
+  componentDidMount() {
+    NetInfo.isConnected.fetch().then(isConnected => {
+      // console.log('First, is ' + (isConnected ? 'online' : 'offline'));
+    });
+    function connectivityChange(isConnected) {
+      // console.log('Then, is ' + (isConnected ? 'online' : 'offline'));
+      if (isConnected === true) {
+        fetch('https://brandonscode.herokuapp.com/currency-data')
+          .then(res => res.json())
+          .then(
+            (result) => {
+              // console.log('Connected to currency database');
+              AsyncStorage.setItem('currency-data', JSON.stringify(result), () => {
+                // console.log('Currency data stored');
+              });
+            }
+          )
+      }
+      NetInfo.isConnected.removeEventListener('connectionChange', connectivityChange);
+    }
+    NetInfo.isConnected.addEventListener('connectionChange', connectivityChange);
+  }
 
   render() {
     if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
