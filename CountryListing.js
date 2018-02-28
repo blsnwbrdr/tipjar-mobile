@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AsyncStorage, View, Text, ScrollView, FlatList, TouchableOpacity } from 'react-native';
+import { NetInfo, AsyncStorage, View, Text, ScrollView, FlatList, TouchableOpacity } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import Styles from './styles/Styles';
 
@@ -29,19 +29,47 @@ export class CountryListing extends Component {
     };
   }
 
+  // LOAD CURRENCY DATA
   componentDidMount() {
-    AsyncStorage.getItem('currency-data', (err,result) => {
-      const currencyData = JSON.parse(result);
-      if (result === null) {
-        this.setState({
-          currencyData: currencyDataArchive
-        })
-      } else {
-        this.setState({
-          currencyData: currencyData
-        })
-      }
+    NetInfo.isConnected.fetch().then(isConnected => {
+      // console.log('First, is ' + (isConnected ? 'online' : 'offline'));
     });
+    connectivityChange = (isConnected) => {
+      // console.log('Then, is ' + (isConnected ? 'online' : 'offline'));
+      if (isConnected === true) {
+        fetch('https://brandonscode.herokuapp.com/currency-data')
+          .then(res => res.json())
+          .then(
+            (result) => {
+              // console.log('Connected to currency database');
+              this.setState({
+                currencyData: result
+              });
+              AsyncStorage.setItem('currency-data', JSON.stringify(result), () => {
+                // console.log('Currency data stored');
+              });
+            }
+          )
+      } else {
+        // console.log('no internet connection')
+        AsyncStorage.getItem('currency-data', (err,result) => {
+          const currencyData = JSON.parse(result);
+          if (result === null) {
+            // console.log('access archive data')
+            this.setState({
+              currencyData: currencyDataArchive
+            })
+          } else {
+            // console.log('access saved data')
+            this.setState({
+              currencyData: currencyData
+            })
+          }
+        });
+      }
+      NetInfo.isConnected.removeEventListener('connectionChange', connectivityChange);
+    }
+    NetInfo.isConnected.addEventListener('connectionChange', connectivityChange);
   }
 
   // DISPLAY COUNTRY DATA
