@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NetInfo, AsyncStorage, View, Text, ScrollView, FlatList, TouchableOpacity } from 'react-native';
+import { AppState, NetInfo, AsyncStorage, View, Text, ScrollView, FlatList, TouchableOpacity } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import Styles from './styles/Styles';
 
@@ -20,22 +20,45 @@ countryTipData.sort(compare);
 export class CountryListing extends Component {
   constructor(props) {
     super(props);
+    this.loadCurrencyData = this.loadCurrencyData.bind(this);
+    this.handleAppStateChange = this.handleAppStateChange.bind(this);
     this.onPressTipData = this.onPressTipData.bind(this);
     this.onPressList = this.onPressList.bind(this);
     this.state = {
+      appState: AppState.currentState,
       listView: true,
       countryTipData: countryTipData,
       currencyData: []
     };
   }
 
-  // LOAD CURRENCY DATA
   componentDidMount() {
+    this.loadCurrencyData();
+    AppState.addEventListener('change', this.handleAppStateChange);
+  }
+
+  componentWillUnmount() {
+    AppState.removeEventListener('change', this.handleAppStateChange);
+  }
+
+  // CHECK APP STATE
+  handleAppStateChange = (nextAppState) => {
+    if (this.state.appState.match(/inactive|background/) && nextAppState === 'active') {
+      // console.log('App has come to the foreground!')
+      this.loadCurrencyData();
+    }
+    this.setState({
+      appState: nextAppState
+    });
+  }
+
+  // LOAD CURRENCY DATA BASED ON INTERNET CONNECTION STATUS
+  loadCurrencyData = () => {
     NetInfo.isConnected.fetch().then(isConnected => {
-      // console.log('First, is ' + (isConnected ? 'online' : 'offline'));
+      // console.log('Initial ' + (isConnected ? 'online' : 'offline'));
     });
     connectivityChange = (isConnected) => {
-      // console.log('Then, is ' + (isConnected ? 'online' : 'offline'));
+      // console.log('Now ' + (isConnected ? 'online' : 'offline'));
       if (isConnected === true) {
         fetch('https://brandonscode.herokuapp.com/currency-data')
           .then(res => res.json())
