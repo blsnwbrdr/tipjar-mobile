@@ -21,7 +21,7 @@ export class CountryListing extends Component {
   constructor(props) {
     super(props);
     this.loadCurrencyData = this.loadCurrencyData.bind(this);
-    this.handleAppStateChange = this.handleAppStateChange.bind(this);
+    // this.handleAppStateChange = this.handleAppStateChange.bind(this);
     this.onPressTipData = this.onPressTipData.bind(this);
     this.onPressList = this.onPressList.bind(this);
     this.state = {
@@ -34,9 +34,10 @@ export class CountryListing extends Component {
 
   componentDidMount() {
     this.loadCurrencyData();
-    AppState.addEventListener('change', this.handleAppStateChange);
+    // AppState.addEventListener('change', this.handleAppStateChange);
   }
 
+  /*
   componentWillUnmount() {
     AppState.removeEventListener('change', this.handleAppStateChange);
   }
@@ -51,39 +52,40 @@ export class CountryListing extends Component {
       appState: nextAppState
     });
   }
+  */
 
   // LOAD CURRENCY DATA BASED ON INTERNET CONNECTION STATUS
   loadCurrencyData = () => {
     NetInfo.isConnected.fetch().then(isConnected => {
-      // console.log('Initial ' + (isConnected ? 'online' : 'offline'));
+      console.log('Initial ' + (isConnected ? 'online' : 'offline'));
     });
     connectivityChange = (isConnected) => {
-      // console.log('Now ' + (isConnected ? 'online' : 'offline'));
+      console.log('Now ' + (isConnected ? 'online' : 'offline'));
       if (isConnected === true) {
         fetch('https://brandonscode.herokuapp.com/currency-data')
           .then(res => res.json())
           .then(
             (result) => {
-              // console.log('Connected to currency database');
+              console.log('Connected to currency database');
               this.setState({
                 currencyData: result
               });
               AsyncStorage.setItem('currency-data', JSON.stringify(result), () => {
-                // console.log('Currency data stored');
+                console.log('Currency data stored');
               });
             }
           )
       } else {
-        // console.log('no internet connection')
+        console.log('no internet connection')
         AsyncStorage.getItem('currency-data', (err,result) => {
           const currencyData = JSON.parse(result);
           if (result === null) {
-            // console.log('access archive data')
+            console.log('access archive data')
             this.setState({
               currencyData: currencyDataArchive
             })
           } else {
-            // console.log('access saved data')
+            console.log('access saved data')
             this.setState({
               currencyData: currencyData
             })
