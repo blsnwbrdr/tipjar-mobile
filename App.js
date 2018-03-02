@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StatusBar, View, Text, TouchableOpacity } from 'react-native';
+import { StatusBar, View, Text } from 'react-native';
 import { AppLoading, Font } from 'expo';
 import { CountryListing } from './CountryListing';
 import { CalculatorModal } from './CalculatorModal';
@@ -8,7 +8,6 @@ import Styles from './styles/Styles';
 export default class App extends Component {
   state = {
     isLoadingComplete: false,
-    getDataComplete: false
   };
 
   render() {
