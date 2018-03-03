@@ -5,6 +5,8 @@ import { CountryListing } from './CountryListing';
 import { CalculatorModal } from './CalculatorModal';
 import Styles from './styles/Styles';
 
+import MainNavigation from './MainNavigation';
+
 export default class App extends Component {
   state = {
     isLoadingComplete: false,
@@ -27,12 +29,30 @@ export default class App extends Component {
             <Text style={Styles.titleText}>TIP JAR</Text>
             <Text style={Styles.subTitleText}>A globetrotting guide to gratuity</Text>
           </View>
-          <CountryListing isLoadingDataComplete={this.state.isLoadingDataComplete} />
+          <CountryListing />
           <CalculatorModal />
         </View>
       );
     }
   }
+
+    // render() {
+    //   if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
+    //     return (
+    //       <AppLoading
+    //         startAsync={this._loadResourcesAsync}
+    //         onError={this._handleLoadingError}
+    //         onFinish={this._handleFinishLoading}
+    //       />
+    //     );
+    //   } else {
+    //     return (
+    //       <View style={Styles.container}>
+    //         <MainNavigation />
+    //       </View>
+    //     );
+    //   }
+    // }
 
   // ASYNC LOAD FONTS
   _loadResourcesAsync = async () => {

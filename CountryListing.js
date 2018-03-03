@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppState, NetInfo, AsyncStorage, View, Text, ScrollView, FlatList, TouchableOpacity } from 'react-native';
+import { AppState, NetInfo, AsyncStorage, View, Text, ScrollView, FlatList, TouchableOpacity, Button } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import Styles from './styles/Styles';
 
@@ -99,6 +99,7 @@ export class CountryListing extends Component {
 
   // DISPLAY COUNTRY DATA
   onPressTipData(country){
+    // this.props.navigation.navigate('Details');
     for ( var x = 0; x < countryTipData.length; x++) {
       if (country === countryTipData[x].country) {
         for ( var i = 0; i < this.state.currencyData.length; i++) {
