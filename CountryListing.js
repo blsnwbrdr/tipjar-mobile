@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppState, NetInfo, AsyncStorage, View, Text, ScrollView, FlatList, TouchableOpacity, Button } from 'react-native';
+import { NetInfo, AsyncStorage, View, Text, ScrollView, FlatList, TouchableOpacity } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import Styles from './styles/Styles';
 
@@ -21,11 +21,9 @@ export class CountryListing extends Component {
   constructor(props) {
     super(props);
     this.loadCurrencyData = this.loadCurrencyData.bind(this);
-    // this.handleAppStateChange = this.handleAppStateChange.bind(this);
     this.onPressTipData = this.onPressTipData.bind(this);
     this.onPressList = this.onPressList.bind(this);
     this.state = {
-      appState: AppState.currentState,
       listView: true,
       countryTipData: countryTipData,
       currencyData: []
@@ -34,58 +32,33 @@ export class CountryListing extends Component {
 
   componentDidMount() {
     this.loadCurrencyData();
-    // AppState.addEventListener('change', this.handleAppStateChange);
   }
-
-  /*
-  componentWillUnmount() {
-    AppState.removeEventListener('change', this.handleAppStateChange);
-  }
-
-  // CHECK APP STATE
-  handleAppStateChange = (nextAppState) => {
-    if (this.state.appState.match(/inactive|background/) && nextAppState === 'active') {
-      // console.log('App has come to the foreground!')
-      this.loadCurrencyData();
-    }
-    this.setState({
-      appState: nextAppState
-    });
-  }
-  */
 
   // LOAD CURRENCY DATA BASED ON INTERNET CONNECTION STATUS
   loadCurrencyData = () => {
     NetInfo.isConnected.fetch().then(isConnected => {
-      console.log('Initial ' + (isConnected ? 'online' : 'offline'));
     });
     connectivityChange = (isConnected) => {
-      console.log('Now ' + (isConnected ? 'online' : 'offline'));
       if (isConnected === true) {
         fetch('https://brandonscode.herokuapp.com/currency-data')
           .then(res => res.json())
           .then(
             (result) => {
-              console.log('Connected to currency database');
               this.setState({
                 currencyData: result
               });
               AsyncStorage.setItem('currency-data', JSON.stringify(result), () => {
-                console.log('Currency data stored');
               });
             }
           )
       } else {
-        console.log('no internet connection')
         AsyncStorage.getItem('currency-data', (err,result) => {
           const currencyData = JSON.parse(result);
           if (result === null) {
-            console.log('access archive data')
             this.setState({
               currencyData: currencyDataArchive
             })
           } else {
-            console.log('access saved data')
             this.setState({
               currencyData: currencyData
             })
@@ -99,7 +72,6 @@ export class CountryListing extends Component {
 
   // DISPLAY COUNTRY DATA
   onPressTipData(country){
-    // this.props.navigation.navigate('Details');
     for ( var x = 0; x < countryTipData.length; x++) {
       if (country === countryTipData[x].country) {
         for ( var i = 0; i < this.state.currencyData.length; i++) {
