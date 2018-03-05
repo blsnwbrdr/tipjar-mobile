@@ -20,7 +20,7 @@ countryTipData.sort(compare);
 export class CountryListing extends Component {
   constructor(props) {
     super(props);
-    this.loadCurrencyData = this.loadCurrencyData.bind(this);
+    // this.loadCurrencyData = this.loadCurrencyData.bind(this);
     this.onPressTipData = this.onPressTipData.bind(this);
     this.onPressList = this.onPressList.bind(this);
     this.state = {
@@ -34,41 +34,58 @@ export class CountryListing extends Component {
     this.loadCurrencyData();
   }
 
-  // LOAD CURRENCY DATA BASED ON INTERNET CONNECTION STATUS
+  // LOAD CURRENCY DATA
   loadCurrencyData = () => {
-    NetInfo.isConnected.fetch().then(isConnected => {
-    });
-    connectivityChange = (isConnected) => {
-      if (isConnected === true) {
-        fetch('https://brandonscode.herokuapp.com/currency-data')
-          .then(res => res.json())
-          .then(
-            (result) => {
-              this.setState({
-                currencyData: result
-              });
-              AsyncStorage.setItem('currency-data', JSON.stringify(result), () => {
-              });
-            }
-          )
+    AsyncStorage.getItem('currency-data', (err,result) => {
+      const currencyData = JSON.parse(result);
+      if (result === null) {
+        console.log('load archive data');
+        this.setState({
+          currencyData: currencyDataArchive
+        })
       } else {
-        AsyncStorage.getItem('currency-data', (err,result) => {
-          const currencyData = JSON.parse(result);
-          if (result === null) {
-            this.setState({
-              currencyData: currencyDataArchive
-            })
-          } else {
-            this.setState({
-              currencyData: currencyData
-            })
-          }
-        });
+        console.log('load saved data');
+        this.setState({
+          currencyData: currencyData
+        })
       }
-      NetInfo.isConnected.removeEventListener('connectionChange', connectivityChange);
-    }
-    NetInfo.isConnected.addEventListener('connectionChange', connectivityChange);
+    });
   }
+  // LOAD CURRENCY DATA BASED ON INTERNET CONNECTION STATUS
+  // loadCurrencyData = () => {
+  //   NetInfo.isConnected.fetch().then(isConnected => {
+  //   });
+  //   connectivityChange = (isConnected) => {
+  //     if (isConnected === true) {
+  //       fetch('https://brandonscode.herokuapp.com/currency-data')
+  //         .then(res => res.json())
+  //         .then(
+  //           (result) => {
+  //             this.setState({
+  //               currencyData: result
+  //             });
+  //             AsyncStorage.setItem('currency-data', JSON.stringify(result), () => {
+  //             });
+  //           }
+  //         )
+  //     } else {
+  //       AsyncStorage.getItem('currency-data', (err,result) => {
+  //         const currencyData = JSON.parse(result);
+  //         if (result === null) {
+  //           this.setState({
+  //             currencyData: currencyDataArchive
+  //           })
+  //         } else {
+  //           this.setState({
+  //             currencyData: currencyData
+  //           })
+  //         }
+  //       });
+  //     }
+  //     NetInfo.isConnected.removeEventListener('connectionChange', connectivityChange);
+  //   }
+  //   NetInfo.isConnected.addEventListener('connectionChange', connectivityChange);
+  // }
 
   // DISPLAY COUNTRY DATA
   onPressTipData(country){
