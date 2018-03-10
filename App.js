@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import { NetInfo, AsyncStorage, StatusBar, View, Text } from 'react-native';
+import { NetInfo, AsyncStorage } from 'react-native';
 import { AppLoading, Font } from 'expo';
-import { CountryListing } from './CountryListing';
-import { CalculatorModal } from './CalculatorModal';
-import Styles from './styles/Styles';
+import MainNavigation from './navigation/MainNavigation';
 
 export default class App extends Component {
   state = {
@@ -37,32 +35,22 @@ export default class App extends Component {
     NetInfo.isConnected.addEventListener('connectionChange', connectivityChange);
   }
 
-  render() {
-    if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
-      return (
-        <AppLoading
-          startAsync={this._loadResourcesAsync}
-          onError={this._handleLoadingError}
-          onFinish={this._handleFinishLoading}
-        />
-      );
-    } else {
-      return (
-        <View style={Styles.container}>
-          <StatusBar barStyle="dark-content" />
-          <View style={Styles.headerContainer}>
-            <Text style={Styles.titleText}>TIP JAR</Text>
-            <Text style={Styles.subTitleText}>A globetrotting guide to gratuity</Text>
-          </View>
-          <CountryListing />
-          <CalculatorModal />
-        </View>
-      );
+    render() {
+      if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
+        return (
+          <AppLoading
+            startAsync={this.loadResourcesAsync}
+            onError={this.handleLoadingError}
+            onFinish={this.handleFinishLoading}
+          />
+        );
+      } else {
+        return  <MainNavigation />
+      }
     }
-  }
 
   // ASYNC LOAD FONTS
-  _loadResourcesAsync = async () => {
+  loadResourcesAsync = async () => {
     return Promise.all([
       Font.loadAsync({
         'patrick-hand': require('./assets/fonts/PatrickHand-Regular.ttf'),
@@ -71,10 +59,10 @@ export default class App extends Component {
       }),
     ]);
   };
-  _handleLoadingError = error => {
+  handleLoadingError = (error) => {
     console.warn(error);
   };
-  _handleFinishLoading = () => {
+  handleFinishLoading = () => {
     this.setState({
       isLoadingComplete: true
     });

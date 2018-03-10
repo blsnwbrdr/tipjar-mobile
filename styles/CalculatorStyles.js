@@ -2,28 +2,12 @@ import { StyleSheet } from 'react-native';
 import { colorOrange, colorLightOrange, colorLightGrey } from './Constants';
 
 const CalculatorStyles = StyleSheet.create({
-  launchButton: {
-    backgroundColor: colorOrange,
-    paddingTop: 10,
-    paddingBottom: 15,
-  },
-  launchButtonText: {
-    fontFamily: 'hind',
-    fontSize: 22,
-    textAlign: 'center',
-    color: 'white',
-  },
-  modalContainer: {
+  container: {
     flex: 1,
-    paddingTop: 75,
-    paddingBottom: 25,
-  },
-  closeButton: {
-    alignItems: 'flex-end',
-    paddingTop: 20,
+    backgroundColor: colorLightGrey,
   },
   displayContainer: {
-    flex: 1,
+    flex: 2,
     backgroundColor: 'black',
     justifyContent: 'flex-end',
   },
@@ -35,7 +19,7 @@ const CalculatorStyles = StyleSheet.create({
     padding: 10,
   },
   calcPad: {
-    flex: 9,
+    flex: 8,
     backgroundColor: colorLightGrey,
   },
   calcRow: {
