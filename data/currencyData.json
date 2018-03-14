@@ -1,35 +1,35 @@
 [
   {
     "currency": "AED",
-    "conversion": "3.672499"
+    "conversion": "3.673095"
   },
   {
     "currency": "AFN",
-    "conversion": "68.889999"
+    "conversion": "68.949997"
   },
   {
     "currency": "ALL",
-    "conversion": "106.349998"
+    "conversion": "105.800003"
   },
   {
     "currency": "AMD",
-    "conversion": "480.440002"
+    "conversion": "480.01001"
   },
   {
     "currency": "ANG",
-    "conversion": "1.779544"
+    "conversion": "1.779974"
   },
   {
     "currency": "AOA",
-    "conversion": "207.912994"
+    "conversion": "213.526993"
   },
   {
     "currency": "ARS",
-    "conversion": "19.760079"
+    "conversion": "20.186001"
   },
   {
     "currency": "AUD",
-    "conversion": "1.264991"
+    "conversion": "1.270702"
   },
   {
     "currency": "AWG",
@@ -37,11 +37,11 @@
   },
   {
     "currency": "AZN",
-    "conversion": "1.6996"
+    "conversion": "1.699497"
   },
   {
     "currency": "BAM",
-    "conversion": "1.579099"
+    "conversion": "1.5785"
   },
   {
     "currency": "BBD",
@@ -49,15 +49,15 @@
   },
   {
     "currency": "BDT",
-    "conversion": "83.339996"
+    "conversion": "82.940002"
   },
   {
     "currency": "BGN",
-    "conversion": "1.569203"
+    "conversion": "1.5801"
   },
   {
     "currency": "BHD",
-    "conversion": "0.376897"
+    "conversion": "0.376798"
   },
   {
     "currency": "BIF",
@@ -69,15 +69,15 @@
   },
   {
     "currency": "BND",
-    "conversion": "1.321706"
+    "conversion": "1.309099"
   },
   {
     "currency": "BOB",
-    "conversion": "6.859881"
+    "conversion": "6.859616"
   },
   {
     "currency": "BRL",
-    "conversion": "3.228198"
+    "conversion": "3.259702"
   },
   {
     "currency": "BSD",
@@ -85,19 +85,19 @@
   },
   {
     "currency": "BTC",
-    "conversion": "0.000093"
+    "conversion": "0.00011"
   },
   {
     "currency": "BTN",
-    "conversion": "64.150002"
+    "conversion": "64.900002"
   },
   {
     "currency": "BWP",
-    "conversion": "9.420103"
+    "conversion": "9.546102"
   },
   {
     "currency": "BYN",
-    "conversion": "1.949802"
+    "conversion": "1.949385"
   },
   {
     "currency": "BYR",
@@ -105,39 +105,39 @@
   },
   {
     "currency": "BZD",
-    "conversion": "1.997799"
+    "conversion": "1.997798"
   },
   {
     "currency": "CAD",
-    "conversion": "1.25574"
+    "conversion": "1.29475"
   },
   {
     "currency": "CDF",
-    "conversion": "1565.49704"
+    "conversion": "1565.502842"
   },
   {
     "currency": "CHF",
-    "conversion": "0.9272"
+    "conversion": "0.94298"
   },
   {
     "currency": "CLF",
-    "conversion": "0.02184"
+    "conversion": "0.02211"
   },
   {
     "currency": "CLP",
-    "conversion": "593.299988"
+    "conversion": "602.900024"
   },
   {
     "currency": "CNY",
-    "conversion": "6.343699"
+    "conversion": "6.315496"
   },
   {
     "currency": "COP",
-    "conversion": "2834"
+    "conversion": "2850"
   },
   {
     "currency": "CRC",
-    "conversion": "565.830017"
+    "conversion": "565.950012"
   },
   {
     "currency": "CUC",
@@ -149,11 +149,11 @@
   },
   {
     "currency": "CVE",
-    "conversion": "88.910004"
+    "conversion": "88.879997"
   },
   {
     "currency": "CZK",
-    "conversion": "20.413601"
+    "conversion": "20.537999"
   },
   {
     "currency": "DJF",
@@ -161,111 +161,111 @@
   },
   {
     "currency": "DKK",
-    "conversion": "6.003698"
+    "conversion": "6.00355"
   },
   {
     "currency": "DOP",
-    "conversion": "48.830002"
+    "conversion": "49.400002"
   },
   {
     "currency": "DZD",
-    "conversion": "113.198997"
+    "conversion": "113.492996"
   },
   {
     "currency": "EGP",
-    "conversion": "17.599871"
+    "conversion": "17.590048"
   },
   {
     "currency": "ERN",
-    "conversion": "15.290387"
+    "conversion": "14.99045"
   },
   {
     "currency": "ETB",
-    "conversion": "27.229873"
+    "conversion": "27.200001"
   },
   {
     "currency": "EUR",
-    "conversion": "0.805805"
+    "conversion": "0.805698"
   },
   {
     "currency": "FJD",
-    "conversion": "1.990498"
+    "conversion": "1.999621"
   },
   {
     "currency": "FKP",
-    "conversion": "0.713303"
+    "conversion": "0.714603"
   },
   {
     "currency": "GBP",
-    "conversion": "0.71365"
+    "conversion": "0.71486"
   },
   {
     "currency": "GEL",
-    "conversion": "2.4541"
+    "conversion": "2.429905"
   },
   {
     "currency": "GGP",
-    "conversion": "0.713475"
+    "conversion": "0.71488"
   },
   {
     "currency": "GHS",
-    "conversion": "4.518498"
+    "conversion": "4.408504"
   },
   {
     "currency": "GIP",
-    "conversion": "0.713497"
+    "conversion": "0.714799"
   },
   {
     "currency": "GMD",
-    "conversion": "46.910219"
+    "conversion": "46.830002"
   },
   {
     "currency": "GNF",
-    "conversion": "8998.000127"
+    "conversion": "9003.999773"
   },
   {
     "currency": "GTQ",
-    "conversion": "7.335981"
+    "conversion": "7.336018"
   },
   {
     "currency": "GYD",
-    "conversion": "205.479996"
+    "conversion": "204.639999"
   },
   {
     "currency": "HKD",
-    "conversion": "7.821498"
+    "conversion": "7.84142"
   },
   {
     "currency": "HNL",
-    "conversion": "23.502631"
+    "conversion": "23.530001"
   },
   {
     "currency": "HRK",
-    "conversion": "5.975103"
+    "conversion": "5.992198"
   },
   {
     "currency": "HTG",
-    "conversion": "63.389999"
+    "conversion": "63.650002"
   },
   {
     "currency": "HUF",
-    "conversion": "250.949997"
+    "conversion": "251.279999"
   },
   {
     "currency": "IDR",
-    "conversion": "13555"
+    "conversion": "13735"
   },
   {
     "currency": "ILS",
-    "conversion": "3.548901"
+    "conversion": "3.425896"
   },
   {
     "currency": "IMP",
-    "conversion": "0.713475"
+    "conversion": "0.71488"
   },
   {
     "currency": "INR",
-    "conversion": "64.238998"
+    "conversion": "64.999001"
   },
   {
     "currency": "IQD",
@@ -273,87 +273,87 @@
   },
   {
     "currency": "IRR",
-    "conversion": "37054.000277"
+    "conversion": "37609.99997"
   },
   {
     "currency": "ISK",
-    "conversion": "100.050003"
+    "conversion": "99.000142"
   },
   {
     "currency": "JEP",
-    "conversion": "0.713475"
+    "conversion": "0.71488"
   },
   {
     "currency": "JMD",
-    "conversion": "125.190002"
+    "conversion": "127.499797"
   },
   {
     "currency": "JOD",
-    "conversion": "0.707504"
+    "conversion": "0.707497"
   },
   {
     "currency": "JPY",
-    "conversion": "106.300003"
+    "conversion": "106.492996"
   },
   {
     "currency": "KES",
-    "conversion": "101.150002"
+    "conversion": "101.050003"
   },
   {
     "currency": "KGS",
-    "conversion": "68.143997"
+    "conversion": "68.158501"
   },
   {
     "currency": "KHR",
-    "conversion": "3995.000168"
+    "conversion": "4006.000346"
   },
   {
     "currency": "KMF",
-    "conversion": "395.450012"
+    "conversion": "396.790009"
   },
   {
     "currency": "KPW",
-    "conversion": "899.999742"
+    "conversion": "900.000085"
   },
   {
     "currency": "KRW",
-    "conversion": "1066.01001"
+    "conversion": "1064.300049"
   },
   {
     "currency": "KWD",
-    "conversion": "0.298976"
+    "conversion": "0.299604"
   },
   {
     "currency": "KYD",
-    "conversion": "0.819799"
+    "conversion": "0.820147"
   },
   {
     "currency": "KZT",
-    "conversion": "319.51001"
+    "conversion": "321.649994"
   },
   {
     "currency": "LAK",
-    "conversion": "8280.000588"
+    "conversion": "8272.000185"
   },
   {
     "currency": "LBP",
-    "conversion": "1505.400024"
+    "conversion": "1509.999437"
   },
   {
     "currency": "LKR",
-    "conversion": "155.119995"
+    "conversion": "155.649994"
   },
   {
     "currency": "LRD",
-    "conversion": "127.510002"
+    "conversion": "130.889999"
   },
   {
     "currency": "LSL",
-    "conversion": "11.645027"
+    "conversion": "11.819834"
   },
   {
     "currency": "LTL",
-    "conversion": "3.048702"
+    "conversion": "3.0487"
   },
   {
     "currency": "LVL",
@@ -361,19 +361,19 @@
   },
   {
     "currency": "LYD",
-    "conversion": "1.322901"
+    "conversion": "1.328198"
   },
   {
     "currency": "MAD",
-    "conversion": "9.155397"
+    "conversion": "9.140302"
   },
   {
     "currency": "MDL",
-    "conversion": "16.565001"
+    "conversion": "16.492979"
   },
   {
     "currency": "MGA",
-    "conversion": "3114.999599"
+    "conversion": "3060.000028"
   },
   {
     "currency": "MKD",
@@ -381,71 +381,71 @@
   },
   {
     "currency": "MMK",
-    "conversion": "1327.000008"
+    "conversion": "1334.99978"
   },
   {
     "currency": "MNT",
-    "conversion": "2391.999973"
+    "conversion": "2392.000167"
   },
   {
     "currency": "MOP",
-    "conversion": "8.051967"
+    "conversion": "8.070601"
   },
   {
     "currency": "MRO",
-    "conversion": "349.000332"
+    "conversion": "351.000361"
   },
   {
     "currency": "MUR",
-    "conversion": "31.999872"
+    "conversion": "32.009998"
   },
   {
     "currency": "MVR",
-    "conversion": "15.569737"
+    "conversion": "15.56988"
   },
   {
     "currency": "MWK",
-    "conversion": "713.440002"
+    "conversion": "713.450012"
   },
   {
     "currency": "MXN",
-    "conversion": "18.510902"
+    "conversion": "18.594801"
   },
   {
     "currency": "MYR",
-    "conversion": "3.890946"
+    "conversion": "3.89396"
   },
   {
     "currency": "MZN",
-    "conversion": "60.360001"
+    "conversion": "62.50636"
   },
   {
     "currency": "NAD",
-    "conversion": "11.630029"
+    "conversion": "11.782978"
   },
   {
     "currency": "NGN",
-    "conversion": "359.00022"
+    "conversion": "355.000064"
   },
   {
     "currency": "NIO",
-    "conversion": "30.895506"
+    "conversion": "30.870001"
   },
   {
     "currency": "NOK",
-    "conversion": "7.78155"
+    "conversion": "7.72859"
   },
   {
     "currency": "NPR",
-    "conversion": "102.676003"
+    "conversion": "104.025597"
   },
   {
     "currency": "NZD",
-    "conversion": "1.355035"
+    "conversion": "1.362903"
   },
   {
     "currency": "OMR",
-    "conversion": "0.384802"
+    "conversion": "0.384799"
   },
   {
     "currency": "PAB",
@@ -453,95 +453,95 @@
   },
   {
     "currency": "PEN",
-    "conversion": "3.2495"
+    "conversion": "3.261498"
   },
   {
     "currency": "PGK",
-    "conversion": "3.144981"
+    "conversion": "3.239018"
   },
   {
     "currency": "PHP",
-    "conversion": "52.200001"
+    "conversion": "52.040001"
   },
   {
     "currency": "PKR",
-    "conversion": "110.349998"
+    "conversion": "110.519997"
   },
   {
     "currency": "PLN",
-    "conversion": "3.351803"
+    "conversion": "3.395055"
   },
   {
     "currency": "PYG",
-    "conversion": "5569.100098"
+    "conversion": "5461.999791"
   },
   {
     "currency": "QAR",
-    "conversion": "3.639802"
+    "conversion": "3.639796"
   },
   {
     "currency": "RON",
-    "conversion": "3.757701"
+    "conversion": "3.762035"
   },
   {
     "currency": "RSD",
-    "conversion": "95.288498"
+    "conversion": "95.427696"
   },
   {
     "currency": "RUB",
-    "conversion": "56.319099"
+    "conversion": "56.997601"
   },
   {
     "currency": "RWF",
-    "conversion": "840.5"
+    "conversion": "842.700012"
   },
   {
     "currency": "SAR",
-    "conversion": "3.7496"
+    "conversion": "3.749897"
   },
   {
     "currency": "SBD",
-    "conversion": "7.7645"
+    "conversion": "7.749397"
   },
   {
     "currency": "SCR",
-    "conversion": "13.296017"
+    "conversion": "13.429997"
   },
   {
     "currency": "SDG",
-    "conversion": "17.953199"
+    "conversion": "18.0502"
   },
   {
     "currency": "SEK",
-    "conversion": "7.96615"
+    "conversion": "8.20445"
   },
   {
     "currency": "SGD",
-    "conversion": "1.31074"
+    "conversion": "1.310331"
   },
   {
     "currency": "SHP",
-    "conversion": "0.713502"
+    "conversion": "0.714801"
   },
   {
     "currency": "SLL",
-    "conversion": "7630.00028"
+    "conversion": "7629.999712"
   },
   {
     "currency": "SOS",
-    "conversion": "561.999951"
+    "conversion": "569.999865"
   },
   {
     "currency": "SRD",
-    "conversion": "7.397082"
+    "conversion": "7.419552"
   },
   {
     "currency": "STD",
-    "conversion": "19756.400391"
+    "conversion": "19750.099609"
   },
   {
     "currency": "SVC",
-    "conversion": "8.750226"
+    "conversion": "8.749561"
   },
   {
     "currency": "SYP",
@@ -549,15 +549,15 @@
   },
   {
     "currency": "SZL",
-    "conversion": "11.594994"
+    "conversion": "11.783059"
   },
   {
     "currency": "THB",
-    "conversion": "31.280001"
+    "conversion": "31.160261"
   },
   {
     "currency": "TJS",
-    "conversion": "8.816496"
+    "conversion": "8.826021"
   },
   {
     "currency": "TMT",
@@ -565,35 +565,35 @@
   },
   {
     "currency": "TND",
-    "conversion": "2.372957"
+    "conversion": "2.377799"
   },
   {
     "currency": "TOP",
-    "conversion": "2.239099"
+    "conversion": "2.2311"
   },
   {
     "currency": "TRY",
-    "conversion": "3.746702"
+    "conversion": "3.869595"
   },
   {
     "currency": "TTD",
-    "conversion": "6.735699"
+    "conversion": "6.745036"
   },
   {
     "currency": "TWD",
-    "conversion": "29.05902"
+    "conversion": "29.240999"
   },
   {
     "currency": "TZS",
-    "conversion": "2246.000233"
+    "conversion": "2248.000091"
   },
   {
     "currency": "UAH",
-    "conversion": "26.995001"
+    "conversion": "25.874996"
   },
   {
     "currency": "UGX",
-    "conversion": "3622.00005"
+    "conversion": "3649.000193"
   },
   {
     "currency": "USD",
@@ -601,71 +601,71 @@
   },
   {
     "currency": "UYU",
-    "conversion": "28.459999"
+    "conversion": "28.330482"
   },
   {
     "currency": "UZS",
-    "conversion": "8168.000304"
+    "conversion": "8125.000127"
   },
   {
     "currency": "VEF",
-    "conversion": "24937.999663"
+    "conversion": "36557.000136"
   },
   {
     "currency": "VND",
-    "conversion": "22694"
+    "conversion": "22764"
   },
   {
     "currency": "VUV",
-    "conversion": "103.139999"
+    "conversion": "103.910004"
   },
   {
     "currency": "WST",
-    "conversion": "2.504989"
+    "conversion": "2.513898"
   },
   {
     "currency": "XAF",
-    "conversion": "528.409973"
+    "conversion": "528.210022"
   },
   {
     "currency": "XAG",
-    "conversion": "0.060029"
+    "conversion": "0.060168"
   },
   {
     "currency": "XAU",
-    "conversion": "0.000742"
+    "conversion": "0.000753"
   },
   {
     "currency": "XCD",
-    "conversion": "2.700188"
+    "conversion": "2.700554"
   },
   {
     "currency": "XDR",
-    "conversion": "0.685036"
+    "conversion": "0.689279"
   },
   {
     "currency": "XOF",
-    "conversion": "528.409973"
+    "conversion": "528.210022"
   },
   {
     "currency": "XPF",
-    "conversion": "96.299602"
+    "conversion": "96.219995"
   },
   {
     "currency": "YER",
-    "conversion": "249.949997"
+    "conversion": "249.850006"
   },
   {
     "currency": "ZAR",
-    "conversion": "11.588403"
+    "conversion": "11.785198"
   },
   {
     "currency": "ZMK",
-    "conversion": "9001.201926"
+    "conversion": "9001.200846"
   },
   {
     "currency": "ZMW",
-    "conversion": "9.830196"
+    "conversion": "9.630135"
   },
   {
     "currency": "ZWL",
