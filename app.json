@@ -20,7 +20,8 @@
         "image": "./assets/tipjar-splash.png",
         "resizeMode": "cover",
         "backgroundColor": "#3E2916"
-      }
+      },
+      "loadJSInBackgroundExperimental": true,
     }
   }
 }
