@@ -76,6 +76,7 @@ export default class Search extends Component {
             style={SearchStyles.input}
             autoCorrect={false}
             placeholder='Search'
+            clearButtonMode='always'
             onChangeText={(text) => this.searchText(text)}
           />
           <TouchableWithoutFeedback onPress={ () => this.closeKeyboard() }>
