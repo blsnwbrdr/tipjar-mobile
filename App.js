@@ -25,7 +25,7 @@ export default class App extends Component {
           .then(
             (result) => {
               AsyncStorage.setItem('currency-data', JSON.stringify(result), () => {
-                console.log('save new data');
+                console.log('save new currency data');
               });
             }
           )

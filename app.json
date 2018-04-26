@@ -16,12 +16,12 @@
     "ios": {
       "bundleIdentifier": "com.brandonscode.tipjar",
       "buildNumber": "1.3.0",
+      "loadJSInBackgroundExperimental": true,
       "splash": {
         "image": "./assets/tipjar-splash.png",
         "resizeMode": "cover",
         "backgroundColor": "#3E2916"
       },
-      "loadJSInBackgroundExperimental": true,
-    }
+    },
   }
 }
