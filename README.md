@@ -10,7 +10,7 @@ Scroll or search through the app to find the tip etiquette of over 85 countries.
 
 This is a completely free app with no ads.
 
-FEATURES:
+**FEATURES:**
 * Tipping data for 85+ countries
 * Currency exchange rate vs $USD
 * Tip calculator
