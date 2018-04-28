@@ -1,6 +1,6 @@
 # Tip Jar Mobile App
 
-![app store][(http://brandonsco.de/portfolio/tipjar/img/appStore.svg)][(https://itunes.apple.com/us/app/tip-jar-guide-to-gratuity/id1321633520?ls=1&mt=8)]
+[![app store][(http://brandonsco.de/portfolio/tipjar/img/appStore.svg)][(https://itunes.apple.com/us/app/tip-jar-guide-to-gratuity/id1321633520?ls=1&mt=8)]]
 
 Tip Jar - A globetrotting guide to gratuity.
 
