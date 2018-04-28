@@ -22,7 +22,7 @@ This is a completely free app with no ads.
 * [Expo](https://expo.io) - A free and complete workflow for creating next-generation apps for iOS and Android
 * [React Native](https://facebook.github.io/react-native/) - Build native mobile apps using JavaScript and React
 * [React Navigation](https://reactnavigation.org) - Routing and navigation for your React Native apps
-* [Custom API](https://github.com/blsnwbrdr/heroku-node-api) - A custom-made API hosting currency data for Tip Jar
+* [Custom API](https://github.com/blsnwbrdr/heroku-node-api) - A custom-made API, hosting currency data for Tip Jar
 
 ## Authors
 
