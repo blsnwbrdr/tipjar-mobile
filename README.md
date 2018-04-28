@@ -1,6 +1,6 @@
 # Tip Jar Mobile App
 
-[![app store][(http://brandonsco.de/portfolio/tipjar/img/appStore.svg)][(https://itunes.apple.com/us/app/tip-jar-guide-to-gratuity/id1321633520?ls=1&mt=8)]]
+[![app store][appstore-img]][appstore-link]
 
 Tip Jar - A globetrotting guide to gratuity.
 
@@ -26,3 +26,6 @@ FEATURES:
 ## Authors
 
 * **Brandon Lew** - [brandonsCO.DE](http://www.brandonsco.de)
+
+[appstore-img]: http://brandonsco.de/portfolio/tipjar/img/appStore.svg
+[appstore-link]: https://itunes.apple.com/us/app/tip-jar-guide-to-gratuity/id1321633520?ls=1&mt=8
