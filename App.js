@@ -20,7 +20,7 @@ export default class App extends Component {
     connectivityChange = (isConnected) => {
       console.log('Now ' + (isConnected ? 'online' : 'offline'));
       if (isConnected === true) {
-        fetch('https://brandonscode.herokuapp.com/currency-data')
+        fetch('https://brandonscode.herokuapp.com/tipjar/currency-data')
           .then(res => res.json())
           .then(
             (result) => {
