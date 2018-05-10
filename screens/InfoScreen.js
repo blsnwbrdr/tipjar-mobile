@@ -76,7 +76,7 @@ export default class InfoScreen extends React.Component {
             <Text style={InfoStyles.countryIcon}>
               <FontAwesome name="building" size={32} color="#494F56" />
             </Text>
-            <Text style={InfoStyles.countryTitle}>Accomodation:</Text>
+            <Text style={InfoStyles.countryTitle}>Accommodation:</Text>
             <Text style={InfoStyles.countryText}>{this.state.countryTipData.accommodation}</Text>
             <Text style={InfoStyles.countryIcon}>
               <FontAwesome name="money" size={32} color="#494F56" />
