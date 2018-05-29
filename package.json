@@ -5,6 +5,10 @@
   "author": "brandon",
   "main": "node_modules/expo/AppEntry.js",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blsnwbrdr/tipjar-mobile-app.git"
+  },
   "dependencies": {
     "expo": "^23.0.0",
     "react": "16.0.0",
