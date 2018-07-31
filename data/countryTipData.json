@@ -772,5 +772,41 @@
     "thankyou": "Dyakuyu",
     "goodbye": "Do pobachennya",
     "currency": "UAH"
+  },
+  {
+    "country": "Latvia",
+    "dining": "Tips are not expected, but rounding up or leaving up to 10% is not uncommon for good service.",
+    "transportation": "Taxis - Nothing is expected, but rounding up the fare is not uncommon. Tour guides - 5% to 10% is appreciated.",
+    "accommodation": "Porters and housekeeping - Tips are not exptected.",
+    "thankyou": "Paldies",
+    "goodbye": "Ardievas",
+    "currency": "EUR"
+  },
+  {
+    "country": "Lithuania",
+    "dining": "Leaving 10% for good service is common.",
+    "transportation": "Taxis - Tips are not expected, but adding a few Euro is common. Tour guides - 5% to 10% is appreciated.",
+    "accommodation": "Porters and housekeeping - Tips are usually only expected in high end hotels.",
+    "thankyou": "Aciu",
+    "goodbye": "Atsiprasau",
+    "currency": "EUR"
+  },
+  {
+    "country": "Kazakhstan",
+    "dining": "Tipping is not customary; however, a small tip directly to the waiter is appreciated.",
+    "transportation": "Taxis - Tips are not expected. Tour guides - 5% to 10% is appreciated.",
+    "accommodation": "Porters and housekeeping - Tips are not expected.",
+    "thankyou": "Raqmet sizge",
+    "goodbye": "Saw boliniz",
+    "currency": "KZT"
+  },
+  {
+    "country": "Uzbekistan",
+    "dining": "A 10% to 15% service charge is usually added to the bill; however, if it is not added automatically, then leave a similiar amount.",
+    "transportation": "Taxis - Tips are not expected. Tour guides - 5% to 10% is appreciated.",
+    "accommodation": "Porters and housekeeping - Tips are not expected.",
+    "thankyou": "Rahmat",
+    "goodbye": "Xayr",
+    "currency": "UZS"
   }
 ]
