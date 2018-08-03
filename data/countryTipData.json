@@ -808,5 +808,23 @@
     "thankyou": "Rahmat",
     "goodbye": "Xayr",
     "currency": "UZS"
+  },
+  {
+    "country": "Mongolia",
+    "dining": "Tipping is not customary; however, it is becoming more common in tourist areas. Leaving 10% to 20% for good service is appreciated.",
+    "transportation": "Taxis - Tips are not expected, but rounding up not uncommon. Tour guides - 10% to 20% is common.",
+    "accommodation": "Porters and housekeeping - A small tip is appreciated.",
+    "thankyou": "Bayarlalaa",
+    "goodbye": "Bayartai",
+    "currency": "MNT"
+  },
+  {
+    "country": "Albania",
+    "dining": "Tipping 10% is common.",
+    "transportation": "Taxis - Round up the fare unless a price is a negotiated before the ride. Tour guides - 10% to 15% is appreciated.",
+    "accommodation": "Porters and housekeeping - A small tip is appreciated.",
+    "thankyou": "Faleminderit",
+    "goodbye": "Lamtumire",
+    "currency": "ALL"
   }
 ]
