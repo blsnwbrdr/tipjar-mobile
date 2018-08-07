@@ -826,5 +826,14 @@
     "thankyou": "Faleminderit",
     "goodbye": "Lamtumire",
     "currency": "ALL"
+  },
+  {
+    "country": "Montenegro",
+    "dining": "Tips are not expected, but rounding up the bill is common.",
+    "transportation": "Taxis - Round up the fare. Tour guides - Nothing is expected, but leaving a few extra EUR is appreciated.",
+    "accommodation": "Porters and housekeeping - Tips are not expected.",
+    "thankyou": "Hvala",
+    "goodbye": "Dovidenja",
+    "currency": "EUR"
   }
 ]
