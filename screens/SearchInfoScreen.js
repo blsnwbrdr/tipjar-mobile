@@ -68,7 +68,7 @@ export default class InfoScreen extends React.Component {
             <Text style={SearchInfoStyles.countryIcon}>
               <FontAwesome name="cutlery" size={32} color="#494F56" />
             </Text>
-            <Text style={SearchInfoStyles.countryTitle}>Dining:</Text>
+            <Text style={SearchInfoStyles.countryTitle}>Dining*:</Text>
             <Text style={SearchInfoStyles.countryText}>{this.state.countryTipData.dining}</Text>
             <Text style={SearchInfoStyles.countryIcon}>
               <FontAwesome name="taxi" size={32} color="#494F56" />
@@ -83,7 +83,7 @@ export default class InfoScreen extends React.Component {
             <Text style={SearchInfoStyles.countryIcon}>
               <FontAwesome name="money" size={32} color="#494F56" />
             </Text>
-            <Text style={SearchInfoStyles.countryTitle}>Currency*:</Text>
+            <Text style={SearchInfoStyles.countryTitle}>Currency**:</Text>
             <Text style={SearchInfoStyles.countryText}>1 USD = {this.state.countryCurrencyData} {this.state.countryTipData.currency}</Text>
             <Text style={SearchInfoStyles.countryIcon}>
               <FontAwesome name="language" size={32} color="#494F56" />
@@ -92,7 +92,8 @@ export default class InfoScreen extends React.Component {
             <Text style={SearchInfoStyles.countryText}>{this.state.countryTipData.thankyou}</Text>
             <Text style={SearchInfoStyles.countryTitle}>Goodbye:</Text>
             <Text style={SearchInfoStyles.countryText}>{this.state.countryTipData.goodbye}</Text>
-            <Text style={SearchInfoStyles.disclaimerText}>*Currency data is not live. Exchange rates are updated daily.</Text>
+            <Text style={SearchInfoStyles.disclaimerText}>*If paying with a credit card, it is highly recommended to have cash available for leaving tips. Many countries do not have a spot for gratuity on their credit card slips.</Text>
+            <Text style={SearchInfoStyles.disclaimerText}>**Currency data is not live. Exchange rates are updated daily.</Text>
           </View>
         </ScrollView>
       </SafeAreaView>
