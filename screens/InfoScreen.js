@@ -91,7 +91,7 @@ export default class InfoScreen extends React.Component {
             <Text style={InfoStyles.countryTitle}>Goodbye:</Text>
             <Text style={InfoStyles.countryText}>{this.state.countryTipData.goodbye}</Text>
             <Text style={InfoStyles.disclaimerText}>*If paying with a credit card, it is highly recommended to have cash available for leaving tips. Many countries do not have a spot for gratuity on their credit card slips.</Text>
-            <Text style={InfoStyles.disclaimerText}>**Currency data is not live. Exchange rates are updated daily.</Text>
+            <Text style={InfoStyles.disclaimerText}>**Currency data is not live. Exchange rates are updated periodically.</Text>
           </View>
         </ScrollView>
       </SafeAreaView>
