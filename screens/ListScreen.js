@@ -49,7 +49,7 @@ export default class ListScreen extends Component {
             }
           />
           <View>
-            <Text style={ListStyles.versionText}>v1.4.3</Text>
+            <Text style={ListStyles.versionText}>v1.5.0</Text>
           </View>
         </ScrollView>
       </SafeAreaView>

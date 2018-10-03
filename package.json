@@ -1,6 +1,6 @@
 {
   "name": "tip-jar-mobile-app",
-  "version": "1.4.3",
+  "version": "1.5.0",
   "description": "gratuity app built with react native",
   "author": "brandon",
   "main": "node_modules/expo/AppEntry.js",
