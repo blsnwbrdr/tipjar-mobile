@@ -37,7 +37,7 @@ export default class ListScreen extends Component {
           </View>
           <FlatList style={ListStyles.listContainer}
             data = {this.state.countryTipData}
-            keyExtractor = {(x, i) => i}
+            keyExtractor = {(x, i) => i.toString()}
             renderItem = { ({item}) =>
               <View style={ListStyles.listButtonContainer}>
                 <TouchableOpacity onPress={ () => this.props.navigation.navigate('Info',item.country) }>
@@ -49,7 +49,7 @@ export default class ListScreen extends Component {
             }
           />
           <View>
-            <Text style={ListStyles.versionText}>v1.4.2</Text>
+            <Text style={ListStyles.versionText}>v1.4.3</Text>
           </View>
         </ScrollView>
       </SafeAreaView>

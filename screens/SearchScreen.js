@@ -84,7 +84,7 @@ export default class Search extends Component {
               <FlatList style={SearchStyles.listContainer}
                 keyboardShouldPersistTaps='always'
                 data = {this.state.countryTipData}
-                keyExtractor = {(x, i) => i}
+                keyExtractor = {(x, i) => i.toString()}
                 renderItem = { ({item}) =>
                   <View style={SearchStyles.listButtonContainer}>
                     <TouchableOpacity onPress={ () => this.props.navigation.navigate('SearchInfo',item.country) }>

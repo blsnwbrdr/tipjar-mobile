@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StatusBar, Text, View, Button } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { StackNavigator, TabNavigator, TabBarBottom } from 'react-navigation';
+import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
 // SCREENS
 import ListScreen from './../screens/ListScreen';
@@ -13,16 +13,12 @@ import CalculatorScreen from './../screens/CalculatorScreen';
 // STYLE CONSTANTS
 import { colorOrange, colorDarkGrey, colorLightGrey } from './../styles/Constants';
 
-const HomeStack = StackNavigator(
+const HomeStack = createStackNavigator(
   {
     List: {
       screen: ListScreen,
       navigationOptions: {
-        headerStyle: {
-          position: 'absolute',
-          top: 0,
-          left: 0,
-        },
+        header: null,
       },
     },
     Info: {
@@ -44,16 +40,12 @@ const HomeStack = StackNavigator(
   },
 );
 
-const SearchStack = StackNavigator(
+const SearchStack = createStackNavigator(
   {
     Search: {
       screen: SearchScreen,
       navigationOptions: {
-        headerStyle: {
-          position: 'absolute',
-          top: 0,
-          left: 0,
-        },
+        header: null,
       },
     },
     SearchInfo: {
@@ -75,7 +67,7 @@ const SearchStack = StackNavigator(
   },
 );
 
-export default TabNavigator(
+export default createBottomTabNavigator(
   {
     List: {
       screen: HomeStack,
@@ -117,7 +109,6 @@ export default TabNavigator(
         );
       },
     }),
-    tabBarComponent: TabBarBottom,
     tabBarPosition: 'bottom',
     tabBarOptions: {
       style: {
