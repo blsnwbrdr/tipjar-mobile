@@ -1,6 +1,6 @@
 {
   "name": "tip-jar-mobile-app",
-  "version": "1.4.1",
+  "version": "1.4.3",
   "description": "gratuity app built with react native",
   "author": "brandon",
   "main": "node_modules/expo/AppEntry.js",
@@ -10,9 +10,9 @@
     "url": "git+https://github.com/blsnwbrdr/tipjar-mobile-app.git"
   },
   "dependencies": {
-    "expo": "^24.0.0",
-    "react": "16.0.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-24.0.0.tar.gz",
-    "react-navigation": "^1.0.0-beta.21"
+    "expo": "^30.0.0",
+    "react": "16.3.1",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-30.0.0.tar.gz",
+    "react-navigation": "^2.13.0"
   }
 }
