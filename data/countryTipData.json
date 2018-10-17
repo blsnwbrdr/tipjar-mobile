@@ -835,5 +835,68 @@
     "thankyou": "Hvala",
     "goodbye": "Dovidenja",
     "currency": "EUR"
+  },
+  {
+    "country": "Oman",
+    "dining": "Tips are not customary, except in high end restaurants if a service fee was not  included in the bill.",
+    "transportation": "Taxis - Tips are not expected. Tour guides - Nothing is expected.",
+    "accommodation": "Porters and housekeeping - Tipping is not customary.",
+    "thankyou": "Shukraan",
+    "goodbye": "Wadaeaan",
+    "currency": "OMR"
+  },
+  {
+    "country": "Bahrain",
+    "dining": "A service charge is usually included in the bill, but leaving up to 10% for good service is not uncommon.",
+    "transportation": "Taxis - Leaving around 10% is common for long distances. Tour guides - 5% to 10% is appreciated.",
+    "accommodation": "Porters and housekeeping - Small change is appreciated.",
+    "thankyou": "Shukraan",
+    "goodbye": "Wadaeaan",
+    "currency": "BHD"
+  },
+  {
+    "country": "Kyrgyzstan",
+    "dining": "Tips are not expected.",
+    "transportation": "Taxis - Tips are not expected. Tour guides - 5% to 10% is appreciated for good service.",
+    "accommodation": "Porters and housekeeping - Tipping is not customary.",
+    "thankyou": "Rahmat Saga",
+    "goodbye": "Kos Bolunuz",
+    "currency": "KGS"
+  },
+  {
+    "country": "El Salvador",
+    "dining": "Leaving 10% is customary.",
+    "transportation": "Taxis - Tips are not expected, but rounding up is common. Tour guides - 5% to 10% is appreciated.",
+    "accommodation": "Porters - 1 USD per bag. Housekeeping - 1 USD per night is appreciated.",
+    "thankyou": "Gracias",
+    "goodbye": "Adios",
+    "currency": "USD"
+  },
+  {
+    "country": "Guatamala",
+    "dining": "Leaving 10% is customary, if a service charge was not added automatically.",
+    "transportation": "Taxis - Tips are not expected. Tour guides - 5% to 10% is appreciated.",
+    "accommodation": "Porters - 10 GTQ per bag. Housekeeping - 10 to 20 GTQ per night is appreciated.",
+    "thankyou": "Gracias",
+    "goodbye": "Adios",
+    "currency": "GTQ"
+  },
+  {
+    "country": "Armenia",
+    "dining": "Leaving 10% is common, especially in Yerevan if a service charge was not added.",
+    "transportation": "Taxis - Round up the fare. Tour guides - 5% to 10% is appreciated.",
+    "accommodation": "Porters and housekeeping - Any small amount is appreciated.",
+    "thankyou": "Shnorhakalut Yun",
+    "goodbye": "Tstesutyun",
+    "currency": "AMD"
+  },
+  {
+    "country": "Azerbaijan",
+    "dining": "A service charge is normally included in the bill. Leave up to 10% for good service if no service charge was included.",
+    "transportation": "Taxis - Round up if you did not negotiate the fare. Tour guides - 5 to 10 AZN is appreciated.",
+    "accommodation": "Porters and housekeeping - 5 to 10 AZN per bag or per night is appreciated.",
+    "thankyou": "Cox Sag Ol",
+    "goodbye": "Gule Gule",
+    "currency": "AZN"
   }
 ]
