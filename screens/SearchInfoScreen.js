@@ -5,15 +5,11 @@ import { FontAwesome } from '@expo/vector-icons';
 // STYLES
 import SearchInfoStyles from './../styles/SearchInfoStyles';
 
-// JSON DATA
-const countryTipData = require('./../data/countryTipData.json');
-const currencyDataArchive = require('./../data/currencyData.json');
-
 export default class InfoScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      countryTipData: countryTipData,
+      countryTipData: [],
       currencyData: []
     }
   }
@@ -29,19 +25,16 @@ export default class InfoScreen extends React.Component {
 
   // GET COUNTRY TIP AND CURRENCY DATA
   componentDidMount = async () => {
-    let response = await AsyncStorage.getItem('currency-data');
-    response = JSON.parse(response);
-    if (response === null) {
-      // console.log('load archive data');
-      this.setState({
-        currencyData: currencyDataArchive,
-      })
-    } else {
-      // console.log('load saved data');
-      this.setState({
-        currencyData: response,
-      })
-    }
+    let countryTipData = await AsyncStorage.getItem('tip-data');
+    countryTipData = JSON.parse(countryTipData);
+    this.setState({
+      countryTipData: countryTipData
+    })
+    let currencyData = await AsyncStorage.getItem('currency-data');
+    currencyData = JSON.parse(currencyData);
+    this.setState({
+      currencyData: currencyData,
+    })
     const { params } = this.props.navigation.state;
     const country = params;
     for ( var x = 0; x < countryTipData.length; x++) {

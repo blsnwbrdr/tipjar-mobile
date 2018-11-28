@@ -45,6 +45,26 @@ const ListStyles = StyleSheet.create({
     paddingLeft: 20,
     paddingRight: 20,
   },
+  otherView: {
+    alignItems: 'center',
+    paddingBottom: 50,
+  },
+  otherText: {
+    fontFamily: 'hind',
+    fontSize: 18,
+    color: colorDarkGrey,
+    textAlign: 'center',
+    paddingLeft: 20,
+    paddingRight: 20,
+  },
+  otherTextSmall: {
+    fontFamily: 'hind',
+    fontSize: 16,
+    color: colorDarkGrey,
+    textAlign: 'center',
+    paddingLeft: 50,
+    paddingRight: 50,
+  },
   versionText: {
     fontFamily: 'hind',
     fontSize: 12,

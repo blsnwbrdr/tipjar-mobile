@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { NetInfo, AsyncStorage } from 'react-native';
 import { AppLoading, Font } from 'expo';
 import MainNavigation from './navigation/MainNavigation';
 
@@ -8,46 +7,19 @@ export default class App extends Component {
     isLoadingComplete: false,
   };
 
-  componentDidMount() {
-    this.downloadCurrencyData();
-  }
-
-  // DOWNLOAD CURRENCY DATA BASED ON INTERNET CONNECTION STATUS
-  downloadCurrencyData = () => {
-    NetInfo.isConnected.fetch().then(isConnected => {
-      console.log('Initial ' + (isConnected ? 'online' : 'offline'));
-    });
-    connectivityChange = (isConnected) => {
-      console.log('Now ' + (isConnected ? 'online' : 'offline'));
-      if (isConnected === true) {
-        fetch('https://brandonscode.herokuapp.com/tipjar/currency-data')
-          .then(res => res.json())
-          .then(
-            (result) => {
-              AsyncStorage.setItem('currency-data', JSON.stringify(result), () => {
-                console.log('save new currency data');
-              });
-            }
-          )
-      }
-      NetInfo.isConnected.removeEventListener('connectionChange', connectivityChange);
+  render() {
+    if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
+      return (
+        <AppLoading
+          startAsync={this.loadResourcesAsync}
+          onError={this.handleLoadingError}
+          onFinish={this.handleFinishLoading}
+        />
+      );
+    } else {
+      return  <MainNavigation />
     }
-    NetInfo.isConnected.addEventListener('connectionChange', connectivityChange);
   }
-
-    render() {
-      if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
-        return (
-          <AppLoading
-            startAsync={this.loadResourcesAsync}
-            onError={this.handleLoadingError}
-            onFinish={this.handleFinishLoading}
-          />
-        );
-      } else {
-        return  <MainNavigation />
-      }
-    }
 
   // ASYNC LOAD FONTS
   loadResourcesAsync = async () => {
