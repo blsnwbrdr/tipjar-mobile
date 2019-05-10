@@ -121,7 +121,7 @@ export default class ListScreen extends Component {
               </View>
           }
           <View>
-            <Text style={ListStyles.versionText}>v1.5.2</Text>
+            <Text style={ListStyles.versionText}>v1.5.3</Text>
           </View>
         </ScrollView>
       </SafeAreaView>
