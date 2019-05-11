@@ -27,6 +27,10 @@
         "resizeMode": "cover",
         "backgroundColor": "#3E2916"
       }
-    }
+    },
+    "platforms": [
+      "android",
+      "ios"
+    ]
   }
 }
