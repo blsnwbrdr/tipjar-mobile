@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StatusBar, Text, View, Button } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
+import { createAppContainer, createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
 // SCREENS
 import ListScreen from './../screens/ListScreen';
@@ -27,7 +27,7 @@ const HomeStack = createStackNavigator(
   },
   {
     headerMode: 'screen',
-    navigationOptions: {
+    defaultNavigationOptions: {
       headerStyle: {
         backgroundColor: colorOrange,
       },
@@ -54,7 +54,7 @@ const SearchStack = createStackNavigator(
   },
   {
     headerMode: 'screen',
-    navigationOptions: {
+    defaultNavigationOptions: {
       headerStyle: {
         backgroundColor: colorOrange,
       },
@@ -67,17 +67,17 @@ const SearchStack = createStackNavigator(
   },
 );
 
-export default createBottomTabNavigator(
+const BottomNavigation = createBottomTabNavigator(
   {
     List: {
       screen: HomeStack,
-      navigationOptions: {
+      defaultNavigationOptions: {
         tabBarLabel: 'List'
       },
     },
     Search: {
       screen: SearchStack,
-      navigationOptions: {
+      defaultNavigationOptions: {
         tabBarLabel: 'Search'
       },
     },
@@ -86,7 +86,7 @@ export default createBottomTabNavigator(
     },
   },
   {
-    navigationOptions: ({ navigation }) => ({
+    defaultNavigationOptions: ({ navigation }) => ({
       tabBarIcon: ({ focused, tintColor }) => {
         const { routeName } = navigation.state;
         let iconName;
@@ -121,3 +121,7 @@ export default createBottomTabNavigator(
     swipeEnabled: false,
   }
 );
+
+const MainNavigation = createAppContainer(BottomNavigation);
+
+export default MainNavigation;

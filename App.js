@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { AppLoading, Font } from 'expo';
+import { AppLoading } from 'expo';
+import * as Font from 'expo-font';
 import MainNavigation from './navigation/MainNavigation';
 
 export default class App extends Component {
