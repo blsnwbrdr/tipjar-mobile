@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 import { colorOrange, colorLightGrey, colorDarkGrey } from './Constants';
 
 const SearchStyles = StyleSheet.create({
-  container: {
+  safeViewContainer: {
     flex: 1,
     backgroundColor: 'white',
   },
@@ -32,13 +32,12 @@ const SearchStyles = StyleSheet.create({
     marginLeft: 50,
     marginBottom: 25,
   },
-  scrollContainer: {
+  container: {
     flex: 1,
     backgroundColor: 'white',
   },
   listContainer: {
     marginTop: 10,
-    marginBottom: 40,
   },
   listButtonContainer: {
     alignItems: 'center',

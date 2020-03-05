@@ -5,7 +5,7 @@
     "version": "1.5.4",
     "slug": "tipjar-mobile",
     "privacy": "public",
-    "sdkVersion": "35.0.0",
+    "sdkVersion": "36.0.0",
     "orientation": "portrait",
     "icon": "./assets/tipjar-icon.png",
     "splash": {
