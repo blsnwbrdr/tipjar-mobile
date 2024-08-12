@@ -2,10 +2,9 @@
   "expo": {
     "name": "Tip Jar",
     "description": "A globetrotting guide to gratuity",
-    "version": "1.5.4",
+    "version": "2.0.0",
     "slug": "tipjar-mobile",
     "privacy": "public",
-    "sdkVersion": "36.0.0",
     "orientation": "portrait",
     "icon": "./assets/tipjar-icon.png",
     "splash": {
@@ -18,7 +17,7 @@
     },
     "ios": {
       "bundleIdentifier": "com.brandonscode.tipjar",
-      "buildNumber": "1.5.4",
+      "buildNumber": "2.0.0",
       "infoPlist": {
         "NSLocationAlwaysUsageDescription": "requires location data"
       },
@@ -28,9 +27,6 @@
         "backgroundColor": "#3E2916"
       }
     },
-    "platforms": [
-      "android",
-      "ios"
-    ]
+    "platforms": ["android", "ios"]
   }
 }
