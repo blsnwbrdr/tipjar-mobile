@@ -4,7 +4,7 @@ import { colorDarkGrey, colorOrange, colorLightGrey } from './Constants';
 const InfoStyles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',  
+    backgroundColor: 'white',
   },
   scrollContainer: {
     flex: 1,
@@ -49,7 +49,7 @@ const InfoStyles = StyleSheet.create({
     color: colorDarkGrey,
     textAlign: 'center',
     paddingTop: 10,
-  }
+  },
 });
 
 export default InfoStyles;

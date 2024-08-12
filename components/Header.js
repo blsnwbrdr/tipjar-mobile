@@ -5,13 +5,14 @@ import { View, Text } from 'react-native';
 import HeaderStyles from './../styles/HeaderStyles';
 
 export default class Header extends Component {
-
   render() {
     return (
       <View style={HeaderStyles.container}>
         <Text style={HeaderStyles.titleText}>TIP JAR</Text>
-        <Text style={HeaderStyles.subTitleText}>A globetrotting guide to gratuity</Text>
+        <Text style={HeaderStyles.subTitleText}>
+          A globetrotting guide to gratuity
+        </Text>
       </View>
-    )
+    );
   }
 }

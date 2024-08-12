@@ -49,7 +49,7 @@ const SearchInfoStyles = StyleSheet.create({
     color: colorDarkGrey,
     textAlign: 'center',
     paddingTop: 10,
-  }
+  },
 });
 
 export default SearchInfoStyles;

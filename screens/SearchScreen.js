@@ -1,8 +1,19 @@
 import React, { Component } from 'react';
-import { AsyncStorage, SafeAreaView, StatusBar, Keyboard, TextInput, FlatList, TouchableWithoutFeedback, TouchableOpacity, View, Text } from 'react-native';
+import {
+  SafeAreaView,
+  StatusBar,
+  Keyboard,
+  TextInput,
+  FlatList,
+  TouchableWithoutFeedback,
+  TouchableOpacity,
+  View,
+  Text,
+} from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 // COMPONENTS
-import CloseKeyboard  from './../components/CloseKeyboard';
+import CloseKeyboard from './../components/CloseKeyboard';
 
 // STYLES
 import SearchStyles from './../styles/SearchStyles';
@@ -22,13 +33,19 @@ export default class Search extends Component {
     countryTipData = JSON.parse(countryTipData);
     this.setState({
       countryTipData: countryTipData,
-    })
-  }
+    });
+  };
 
   // KEYBOARD LISTENERS AND FUNCTIONS
   componentDidMount() {
-    this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this.keyboardDidShow);
-    this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this.keyboardDidHide);
+    this.keyboardDidShowListener = Keyboard.addListener(
+      'keyboardDidShow',
+      this.keyboardDidShow
+    );
+    this.keyboardDidHideListener = Keyboard.addListener(
+      'keyboardDidHide',
+      this.keyboardDidHide
+    );
   }
   componentWillUnmount() {
     this.keyboardDidShowListener.remove();
@@ -37,28 +54,28 @@ export default class Search extends Component {
   keyboardDidShow = () => {
     this.setState({
       keyboard: 'on',
-    })
-  }
+    });
+  };
   keyboardDidHide = () => {
     this.setState({
       keyboard: 'off',
-    })
-  }
+    });
+  };
 
   // SEARCH FUNCTION
   searchText(text) {
-    const pattern = new RegExp(text,'gi');
+    const pattern = new RegExp(text, 'gi');
     let userMatches = [];
     for (let x = 0; x < this.state.countryTipData.length; x++) {
-      if (text === '' ) {
+      if (text === '') {
         this.setState({
           countryTipDataMatch: '',
-        })
+        });
       } else if (this.state.countryTipData[x].country.search(pattern) >= 0) {
         userMatches.push(this.state.countryTipData[x]);
         this.setState({
           countryTipDataMatch: userMatches,
-        })
+        });
       }
     }
   }
@@ -69,10 +86,9 @@ export default class Search extends Component {
   }
 
   render() {
-
     return (
       <SafeAreaView style={SearchStyles.safeViewContainer}>
-        <StatusBar barStyle="dark-content" />
+        <StatusBar barStyle='dark-content' />
         <View style={SearchStyles.bodyContainer}>
           <CloseKeyboard
             closeKeyboard={this.closeKeyboard}
@@ -85,26 +101,39 @@ export default class Search extends Component {
             clearButtonMode='always'
             onChangeText={(text) => this.searchText(text)}
           />
-          <TouchableWithoutFeedback onPress={ () => this.closeKeyboard() }>
-            <View style={SearchStyles.container} keyboardShouldPersistTaps='always'>
-              <FlatList style={SearchStyles.listContainer}
+          <TouchableWithoutFeedback onPress={() => this.closeKeyboard()}>
+            <View
+              style={SearchStyles.container}
+              keyboardShouldPersistTaps='always'
+            >
+              <FlatList
+                style={SearchStyles.listContainer}
                 keyboardShouldPersistTaps='always'
-                data = {this.state.countryTipDataMatch}
-                keyExtractor = {(x, i) => i.toString()}
-                renderItem = { ({item}) =>
+                data={this.state.countryTipDataMatch}
+                keyExtractor={(x, i) => i.toString()}
+                renderItem={({ item }) => (
                   <View style={SearchStyles.listButtonContainer}>
-                    <TouchableOpacity onPress={ () => this.props.navigation.navigate('SearchInfo',item.country) }>
+                    <TouchableOpacity
+                      onPress={() =>
+                        this.props.navigation.navigate(
+                          'SearchInfo',
+                          item.country
+                        )
+                      }
+                    >
                       <View style={SearchStyles.listButton}>
-                        <Text style={SearchStyles.listButtonText}>{item.country}</Text>
+                        <Text style={SearchStyles.listButtonText}>
+                          {item.country}
+                        </Text>
                       </View>
                     </TouchableOpacity>
                   </View>
-                }
+                )}
               />
             </View>
           </TouchableWithoutFeedback>
         </View>
       </SafeAreaView>
-    )
+    );
   }
 }

@@ -5,12 +5,11 @@ import { View, Text } from 'react-native';
 import FooterStyles from './../styles/FooterStyles';
 
 export default class Footer extends Component {
-
   render() {
     return (
       <View style={FooterStyles.container}>
-        <Text style={FooterStyles.text}>v1.5.4</Text>
+        <Text style={FooterStyles.text}>v2.0.0</Text>
       </View>
-    )
+    );
   }
 }
