@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
-import { StatusBar, Text, View, Button } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
-import { createAppContainer, createStackNavigator, createBottomTabNavigator } from 'react-navigation';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { FontAwesome } from '@expo/vector-icons';
 
 // SCREENS
 import ListScreen from './../screens/ListScreen';
@@ -11,117 +12,103 @@ import SearchInfoScreen from './../screens/SearchInfoScreen';
 import CalculatorScreen from './../screens/CalculatorScreen';
 
 // STYLE CONSTANTS
-import { colorOrange, colorDarkGrey, colorLightGrey } from './../styles/Constants';
+import { colorOrange, colorDarkGrey } from './../styles/Constants';
 
-const HomeStack = createStackNavigator(
-  {
-    List: {
-      screen: ListScreen,
-      navigationOptions: {
-        header: null,
-      },
-    },
-    Info: {
-      screen: InfoScreen,
-    },
-  },
-  {
-    headerMode: 'screen',
-    defaultNavigationOptions: {
-      headerStyle: {
-        backgroundColor: colorOrange,
-      },
-      headerTintColor: 'white',
-      headerTitleStyle: {
-        fontFamily: 'patrick-hand',
-        fontSize: 24,
-      },
-    },
-  },
-);
+// DEFINE LISTSTACK AS NATIVE STACK NAVIGATOR
+const ListStack = createNativeStackNavigator();
 
-const SearchStack = createStackNavigator(
-  {
-    Search: {
-      screen: SearchScreen,
-      navigationOptions: {
-        header: null,
-      },
-    },
-    SearchInfo: {
-      screen: SearchInfoScreen,
-    },
-  },
-  {
-    headerMode: 'screen',
-    defaultNavigationOptions: {
-      headerStyle: {
-        backgroundColor: colorOrange,
-      },
-      headerTintColor: 'white',
-      headerTitleStyle: {
-        fontFamily: 'patrick-hand',
-        fontSize: 24,
-      },
-    },
-  },
-);
+const ListStackScreen = () => {
+  return (
+    <ListStack.Navigator
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: colorOrange,
+        },
+        headerTintColor: 'white',
+        headerTitleStyle: {
+          fontFamily: 'patrick-hand',
+          fontSize: 24,
+        },
+      }}
+    >
+      <ListStack.Screen
+        name='List'
+        component={ListScreen}
+        options={{ headerShown: false }}
+      />
+      <ListStack.Screen name='Info' component={InfoScreen} />
+    </ListStack.Navigator>
+  );
+};
 
-const BottomNavigation = createBottomTabNavigator(
-  {
-    List: {
-      screen: HomeStack,
-      defaultNavigationOptions: {
-        tabBarLabel: 'List'
-      },
-    },
-    Search: {
-      screen: SearchStack,
-      defaultNavigationOptions: {
-        tabBarLabel: 'Search'
-      },
-    },
-    Calculator: {
-      screen: CalculatorScreen,
-    },
-  },
-  {
-    defaultNavigationOptions: ({ navigation }) => ({
-      tabBarIcon: ({ focused, tintColor }) => {
-        const { routeName } = navigation.state;
-        let iconName;
-        switch (routeName) {
-          case 'List':
-            iconName = 'ios-list';
-            break;
-          case 'Search':
-            iconName = 'ios-search';
-            break;
-          case 'Calculator':
-            iconName = 'ios-calculator';
-        }
-        return (
-          <Ionicons
-            name={iconName}
-            size={25}
-            color={tintColor}
-          />
-        );
-      },
-    }),
-    tabBarPosition: 'bottom',
-    tabBarOptions: {
-      style: {
-        backgroundColor: colorLightGrey,
-      },
-      activeTintColor: colorOrange,
-      inactiveTintColor: colorDarkGrey,
-    },
-    animationEnabled: false,
-    swipeEnabled: false,
-  }
-);
+// DEFINE SEARCHSTACK AS NATIVE STACK NAVIGATOR
+const SearchStack = createNativeStackNavigator();
 
-const MainNavigation = createAppContainer(BottomNavigation);
+function SearchStackScreen() {
+  return (
+    <SearchStack.Navigator
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: colorOrange,
+        },
+        headerTintColor: 'white',
+        headerTitleStyle: {
+          fontFamily: 'patrick-hand',
+          fontSize: 24,
+        },
+      }}
+    >
+      <SearchStack.Screen
+        name='Search'
+        component={SearchScreen}
+        options={{ headerShown: false }}
+      />
+      <SearchStack.Screen name='SearchInfo' component={SearchInfoScreen} />
+    </SearchStack.Navigator>
+  );
+}
 
-export default MainNavigation;
+// DEFINE TAB AS BOTTOM TAB NAVIGATOR
+const Tab = createBottomTabNavigator();
+
+export default MainNavigation = () => {
+  return (
+    <NavigationContainer>
+      <Tab.Navigator
+        screenOptions={({ route }) => ({
+          headerShown: false,
+          tabBarIcon: ({ color }) => {
+            let iconName;
+
+            switch (route.name) {
+              case 'ListStack':
+                iconName = 'list';
+                break;
+              case 'SearchStack':
+                iconName = 'search';
+                break;
+              case 'Calculator':
+                iconName = 'calculator';
+            }
+
+            return <FontAwesome name={iconName} size={20} color={color} />;
+          },
+          tabBarActiveTintColor: colorOrange,
+          tabBarInactiveTintColor: colorDarkGrey,
+        })}
+      >
+        <Tab.Screen
+          name='ListStack'
+          component={ListStackScreen}
+          options={{ title: 'List' }}
+        />
+        <Tab.Screen
+          name='SearchStack'
+          component={SearchStackScreen}
+          options={{ title: 'Search' }}
+        />
+        <Tab.Screen name='Calculator' component={CalculatorScreen} />
+      </Tab.Navigator>
+    </NavigationContainer>
+  );
+};
