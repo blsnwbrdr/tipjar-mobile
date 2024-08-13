@@ -69,7 +69,13 @@ function SearchStackScreen() {
         component={SearchScreen}
         options={{ headerShown: false }}
       />
-      <SearchStack.Screen name='SearchInfo' component={SearchInfoScreen} />
+      <SearchStack.Screen
+        name='SearchInfo'
+        component={SearchInfoScreen}
+        options={({ route }) => ({
+          headerTitle: route.params,
+        })}
+      />
     </SearchStack.Navigator>
   );
 }
