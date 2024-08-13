@@ -45,7 +45,7 @@ export default ListScreen = ({ navigation }) => {
 
   // DOWNLOAD AND STORE DATA BASED ON INTERNET CONNECTION STATUS
   useEffect(() => {
-    // AsyncStorage.clear()
+    // AsyncStorage.clear();
     NetInfo.fetch().then((state) => {
       if (state.isConnected) {
         fetch('https://brandonscode.herokuapp.com/tipjar/tip-data')
@@ -76,13 +76,15 @@ export default ListScreen = ({ navigation }) => {
   });
 
   const getCountryTipData = () => {
-    AsyncStorage.getItem('tip-data', (err, result) => {
-      if (result) {
-        const countryTipData = JSON.parse(result);
-        setCountryTipData(countryTipData);
-      } else {
-        setDisplayError(true);
-      }
+    AsyncStorage.getItem('tip-data', (err, tipResult) => {
+      AsyncStorage.getItem('currency-data', (err, currencyResult) => {
+        if (tipResult && currencyResult) {
+          const countryTipData = JSON.parse(tipResult);
+          setCountryTipData(countryTipData);
+        } else {
+          setDisplayError(true);
+        }
+      });
     });
   };
 
