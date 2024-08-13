@@ -36,7 +36,13 @@ const ListStackScreen = () => {
         component={ListScreen}
         options={{ headerShown: false }}
       />
-      <ListStack.Screen name='Info' component={InfoScreen} />
+      <ListStack.Screen
+        name='Info'
+        component={InfoScreen}
+        options={({ route }) => ({
+          headerTitle: route.params,
+        })}
+      />
     </ListStack.Navigator>
   );
 };
