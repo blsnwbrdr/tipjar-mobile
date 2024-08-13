@@ -20,7 +20,7 @@ export default InfoScreen = ({ route }) => {
     _setCurrencyData(newCurrencyData);
   };
 
-  // GET COUNTRY TIP AND CURRENCY DATA
+  // GET STORED TIP AND CURRENCY DATA
   useEffect(() => {
     AsyncStorage.getItem('tip-data', (err, tipResult) => {
       const countryTipData = JSON.parse(tipResult);

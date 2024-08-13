@@ -73,8 +73,9 @@ export default ListScreen = ({ navigation }) => {
         setDisplayList(true);
       }
     });
-  });
+  }, []);
 
+  // GET STORED TIP AND CURRENCY DATA
   const getCountryTipData = () => {
     AsyncStorage.getItem('tip-data', (err, tipResult) => {
       AsyncStorage.getItem('currency-data', (err, currencyResult) => {
