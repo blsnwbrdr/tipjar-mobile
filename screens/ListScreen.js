@@ -89,6 +89,24 @@ export default ListScreen = ({ navigation }) => {
     });
   };
 
+  // FLAT LIST - KEY EXTRACTOR
+  const keyExtractor = (item) => item.country.toString();
+
+  // VIEW - RENDER ITEM
+  const renderItem = ({ item }) => {
+    return (
+      <View style={ListStyles.listButtonContainer}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('Info', item.country)}
+        >
+          <View style={ListStyles.listButton}>
+            <Text style={ListStyles.listButtonText}>{item.country}</Text>
+          </View>
+        </TouchableOpacity>
+      </View>
+    );
+  };
+
   return (
     <SafeAreaView style={ListStyles.safeViewContainer}>
       <StatusBar barStyle='dark-content' />
@@ -98,20 +116,13 @@ export default ListScreen = ({ navigation }) => {
           <FlatList
             style={ListStyles.listContainer}
             data={countryTipDataRef.current}
-            keyExtractor={(x, i) => i.toString()}
-            renderItem={({ item }) => (
-              <View style={ListStyles.listButtonContainer}>
-                <TouchableOpacity
-                  onPress={() => navigation.navigate('Info', item.country)}
-                >
-                  <View style={ListStyles.listButton}>
-                    <Text style={ListStyles.listButtonText}>
-                      {item.country}
-                    </Text>
-                  </View>
-                </TouchableOpacity>
-              </View>
-            )}
+            keyExtractor={keyExtractor}
+            renderItem={renderItem}
+            removeClippedSubviews={true}
+            maxToRenderPerBatch={10}
+            updateCellsBatchingPeriod={100}
+            initialNumToRender={10}
+            windowSize={5}
             ListFooterComponent={<Footer />}
           />
         )}
