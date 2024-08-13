@@ -22,10 +22,10 @@ export default InfoScreen = ({ route }) => {
 
   // GET COUNTRY TIP AND CURRENCY DATA
   useEffect(() => {
-    AsyncStorage.getItem('tip-data', (err, result) => {
-      const countryTipData = JSON.parse(result);
-      AsyncStorage.getItem('currency-data', (err, result) => {
-        const currencyData = JSON.parse(result);
+    AsyncStorage.getItem('tip-data', (err, tipResult) => {
+      const countryTipData = JSON.parse(tipResult);
+      AsyncStorage.getItem('currency-data', (err, currencyResult) => {
+        const currencyData = JSON.parse(currencyResult);
 
         const country = route.params;
         for (var x = 0; x < countryTipData.length; x++) {
