@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import {
   SafeAreaView,
   StatusBar,
@@ -17,38 +17,35 @@ import Footer from './../components/Footer';
 // STYLES
 import ListStyles from './../styles/ListStyles';
 
-export default class ListScreen extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      displayList: false,
-      displayLoading: true,
-      displayError: false,
-      countryTipData: [],
-    };
-  }
-
-  componentDidMount() {
-    // AsyncStorage.clear()
-    this.downloadData();
-  }
-
-  getCountryTipData = async () => {
-    let countryTipData = await AsyncStorage.getItem('tip-data');
-    if (countryTipData) {
-      countryTipData = JSON.parse(countryTipData);
-      this.setState({
-        countryTipData: countryTipData,
-      });
-    } else {
-      this.setState({
-        displayError: true,
-      });
-    }
+export default ListScreen = ({ navigation }) => {
+  const [displayList, _setDisplayList] = useState(false);
+  const displayListRef = useRef(displayList);
+  const setDisplayList = (newDisplayList) => {
+    displayListRef.current = newDisplayList;
+    _setDisplayList(newDisplayList);
+  };
+  const [displayLoading, _setDisplayLoading] = useState(true);
+  const displayLoadingRef = useRef(displayLoading);
+  const setDisplayLoading = (newDisplayLoading) => {
+    displayLoadingRef.current = newDisplayLoading;
+    _setDisplayLoading(newDisplayLoading);
+  };
+  const [displayError, _setDisplayError] = useState(false);
+  const displayErrorRef = useRef(displayError);
+  const setDisplayError = (newDisplayError) => {
+    displayErrorRef.current = newDisplayError;
+    _setDisplayError(newDisplayError);
+  };
+  const [countryTipData, _setCountryTipData] = useState([]);
+  const countryTipDataRef = useRef(countryTipData);
+  const setCountryTipData = (newCountryTipData) => {
+    countryTipDataRef.current = newCountryTipData;
+    _setCountryTipData(newCountryTipData);
   };
 
-  // DOWNLOAD DATA BASED ON INTERNET CONNECTION STATUS
-  downloadData = () => {
+  // DOWNLOAD AND STORE DATA BASED ON INTERNET CONNECTION STATUS
+  useEffect(() => {
+    // AsyncStorage.clear()
     NetInfo.fetch().then((state) => {
       if (state.isConnected) {
         fetch('https://brandonscode.herokuapp.com/tipjar/tip-data')
@@ -56,7 +53,7 @@ export default class ListScreen extends Component {
           .then((result) => {
             AsyncStorage.setItem('tip-data', JSON.stringify(result)).then(
               () => {
-                this.getCountryTipData();
+                getCountryTipData();
               }
             );
           });
@@ -65,70 +62,71 @@ export default class ListScreen extends Component {
           .then((result) => {
             AsyncStorage.setItem('currency-data', JSON.stringify(result)).then(
               () => {
-                this.setState({
-                  displayLoading: false,
-                  displayList: true,
-                });
+                setDisplayLoading(false);
+                setDisplayList(true);
               }
             );
           });
       } else {
-        this.getCountryTipData();
-        this.setState({
-          displayLoading: false,
-          displayList: true,
-        });
+        getCountryTipData();
+        setDisplayLoading(false);
+        setDisplayList(true);
+      }
+    });
+  });
+
+  const getCountryTipData = () => {
+    AsyncStorage.getItem('tip-data', (err, result) => {
+      if (result) {
+        const countryTipData = JSON.parse(result);
+        setCountryTipData(countryTipData);
+      } else {
+        setDisplayError(true);
       }
     });
   };
 
-  render() {
-    const displayList = this.state.displayList;
-    const displayLoading = this.state.displayLoading;
-    const displayError = this.state.displayError;
-
-    return (
-      <SafeAreaView style={ListStyles.safeViewContainer}>
-        <StatusBar barStyle='dark-content' />
-        <View style={ListStyles.container}>
-          <Header />
-          {displayList && (
-            <FlatList
-              style={ListStyles.listContainer}
-              data={this.state.countryTipData}
-              keyExtractor={(x, i) => i.toString()}
-              renderItem={({ item }) => (
-                <View style={ListStyles.listButtonContainer}>
-                  <TouchableOpacity
-                    onPress={() => navigate('Info', item.country)}
-                  >
-                    <View style={ListStyles.listButton}>
-                      <Text style={ListStyles.listButtonText}>
-                        {item.country}
-                      </Text>
-                    </View>
-                  </TouchableOpacity>
-                </View>
-              )}
-              ListFooterComponent={<Footer />}
-            />
-          )}
-          {displayLoading && (
-            <View style={ListStyles.otherView}>
-              <Text style={ListStyles.otherText}>Updating data</Text>
-            </View>
-          )}
-          {displayError && (
-            <View style={ListStyles.otherView}>
-              <Text style={ListStyles.otherText}>Sorry...</Text>
-              <Text style={ListStyles.otherTextSmall}>
-                For your first use, an internet connection is needed to download
-                our tip data. Once downloaded, the app can be used offline.
-              </Text>
-            </View>
-          )}
-        </View>
-      </SafeAreaView>
-    );
-  }
-}
+  return (
+    <SafeAreaView style={ListStyles.safeViewContainer}>
+      <StatusBar barStyle='dark-content' />
+      <View style={ListStyles.container}>
+        <Header />
+        {displayListRef.current && (
+          <FlatList
+            style={ListStyles.listContainer}
+            data={countryTipDataRef.current}
+            keyExtractor={(x, i) => i.toString()}
+            renderItem={({ item }) => (
+              <View style={ListStyles.listButtonContainer}>
+                <TouchableOpacity
+                  onPress={() => navigation.navigate('Info', item.country)}
+                >
+                  <View style={ListStyles.listButton}>
+                    <Text style={ListStyles.listButtonText}>
+                      {item.country}
+                    </Text>
+                  </View>
+                </TouchableOpacity>
+              </View>
+            )}
+            ListFooterComponent={<Footer />}
+          />
+        )}
+        {displayLoadingRef.current && (
+          <View style={ListStyles.otherView}>
+            <Text style={ListStyles.otherText}>Updating data</Text>
+          </View>
+        )}
+        {displayErrorRef.current && (
+          <View style={ListStyles.otherView}>
+            <Text style={ListStyles.otherText}>Sorry...</Text>
+            <Text style={ListStyles.otherTextSmall}>
+              For your first use, an internet connection is needed to download
+              our tip data. Once downloaded, the app can be used offline.
+            </Text>
+          </View>
+        )}
+      </View>
+    </SafeAreaView>
+  );
+};
