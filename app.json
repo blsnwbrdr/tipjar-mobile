@@ -25,8 +25,16 @@
         "image": "./assets/tipjar-splash.png",
         "resizeMode": "cover",
         "backgroundColor": "#3E2916"
+      },
+      "entitlements": {
+        "aps-environment": "development"
       }
     },
-    "platforms": ["android", "ios"]
+    "platforms": ["android", "ios"],
+    "extra": {
+      "eas": {
+        "projectId": "e51d0570-d98d-11e7-bb72-576daa394d93"
+      }
+    }
   }
 }
