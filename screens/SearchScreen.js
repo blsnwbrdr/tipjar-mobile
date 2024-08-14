@@ -13,6 +13,7 @@ import {
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 // STYLES
+import { colorMediumGrey } from './../styles/Constants';
 import SearchStyles from './../styles/SearchStyles';
 
 export default Search = ({ navigation }) => {
@@ -69,6 +70,7 @@ export default Search = ({ navigation }) => {
             style={SearchStyles.input}
             autoCorrect={false}
             placeholder='Search'
+            placeholderTextColor={colorMediumGrey}
             clearButtonMode='always'
             onChangeText={(text) => searchText(text)}
           />

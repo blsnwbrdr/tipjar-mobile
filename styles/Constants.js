@@ -1,5 +1,6 @@
 // STYLE VARIABLES
 export const colorDarkGrey = '#494F56';
+export const colorMediumGrey = '#A4A7AB';
 export const colorLightGrey = '#FDFDFD';
 export const colorOrange = '#B57A42';
 export const colorLightOrange = '#ECDED0';
