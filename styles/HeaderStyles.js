@@ -16,7 +16,7 @@ const HeaderStyles = StyleSheet.create({
     fontFamily: 'nothing-you-could-do',
     fontSize: 16,
     color: colorDarkGrey,
-  }
-})
+  },
+});
 
 export default HeaderStyles;

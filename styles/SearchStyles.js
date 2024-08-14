@@ -51,6 +51,6 @@ const SearchStyles = StyleSheet.create({
     paddingLeft: 20,
     paddingRight: 20,
   },
-})
+});
 
-export default SearchStyles
+export default SearchStyles;

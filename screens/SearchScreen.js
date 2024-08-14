@@ -1,110 +1,109 @@
-import React, { Component } from 'react';
-import { AsyncStorage, SafeAreaView, StatusBar, Keyboard, TextInput, FlatList, TouchableWithoutFeedback, TouchableOpacity, View, Text } from 'react-native';
-
-// COMPONENTS
-import CloseKeyboard  from './../components/CloseKeyboard';
+import React, { useState, useRef, useEffect } from 'react';
+import {
+  SafeAreaView,
+  StatusBar,
+  Keyboard,
+  TextInput,
+  FlatList,
+  TouchableWithoutFeedback,
+  TouchableOpacity,
+  View,
+  Text,
+} from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 // STYLES
+import { colorMediumGrey } from './../styles/Constants';
 import SearchStyles from './../styles/SearchStyles';
 
-export default class Search extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      countryTipData: [],
-      text: '',
-      keyboard: 'off',
-    };
-  }
+export default Search = ({ navigation }) => {
+  const [displaySearchBar, _setDisplaySearchBar] = useState(false);
+  const displaySearchBarRef = useRef(displaySearchBar);
+  const setDisplaySearchBar = (newDisplaySearchBar) => {
+    displaySearchBarRef.current = newDisplaySearchBar;
+    _setDisplaySearchBar(newDisplaySearchBar);
+  };
+  const [countryTipData, _setCountryTipData] = useState([]);
+  const countryTipDataRef = useRef(countryTipData);
+  const setCountryTipData = (newCountryTipData) => {
+    countryTipDataRef.current = newCountryTipData;
+    _setCountryTipData(newCountryTipData);
+  };
+  const [countryTipDataMatch, setCountryTipDataMatch] = useState('');
 
-  componentDidMount = async () => {
-    let countryTipData = await AsyncStorage.getItem('tip-data');
-    countryTipData = JSON.parse(countryTipData);
-    this.setState({
-      countryTipData: countryTipData,
-    })
-  }
-
-  // KEYBOARD LISTENERS AND FUNCTIONS
-  componentDidMount() {
-    this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this.keyboardDidShow);
-    this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this.keyboardDidHide);
-  }
-  componentWillUnmount() {
-    this.keyboardDidShowListener.remove();
-    this.keyboardDidHideListener.remove();
-  }
-  keyboardDidShow = () => {
-    this.setState({
-      keyboard: 'on',
-    })
-  }
-  keyboardDidHide = () => {
-    this.setState({
-      keyboard: 'off',
-    })
-  }
+  // GET STORED TIP DATA
+  useEffect(() => {
+    AsyncStorage.getItem('tip-data', (err, result) => {
+      if (result) {
+        setDisplaySearchBar(true);
+        const countryTipData = JSON.parse(result);
+        setCountryTipData(countryTipData);
+      }
+    });
+  });
 
   // SEARCH FUNCTION
-  searchText(text) {
-    const pattern = new RegExp(text,'gi');
+  const searchText = (text) => {
+    const pattern = new RegExp(text, 'gi');
     let userMatches = [];
-    for (let x = 0; x < this.state.countryTipData.length; x++) {
-      if (text === '' ) {
-        this.setState({
-          countryTipDataMatch: '',
-        })
-      } else if (this.state.countryTipData[x].country.search(pattern) >= 0) {
-        userMatches.push(this.state.countryTipData[x]);
-        this.setState({
-          countryTipDataMatch: userMatches,
-        })
+    for (let x = 0; x < countryTipDataRef.current.length; x++) {
+      if (text === '') {
+        setCountryTipDataMatch('');
+      } else if (countryTipDataRef.current[x].country.search(pattern) >= 0) {
+        userMatches.push(countryTipDataRef.current[x]);
+        setCountryTipDataMatch(userMatches);
       }
     }
-  }
+  };
 
   // CLOSE KEYBOARD
-  closeKeyboard() {
+  const closeKeyboard = () => {
     Keyboard.dismiss();
-  }
+  };
 
-  render() {
-
-    return (
-      <SafeAreaView style={SearchStyles.safeViewContainer}>
-        <StatusBar barStyle="dark-content" />
-        <View style={SearchStyles.bodyContainer}>
-          <CloseKeyboard
-            closeKeyboard={this.closeKeyboard}
-            keyboard={this.state.keyboard}
-          />
+  return (
+    <SafeAreaView style={SearchStyles.safeViewContainer}>
+      <StatusBar barStyle='dark-content' />
+      <View style={SearchStyles.bodyContainer}>
+        {displaySearchBarRef.current && (
           <TextInput
             style={SearchStyles.input}
             autoCorrect={false}
             placeholder='Search'
+            placeholderTextColor={colorMediumGrey}
             clearButtonMode='always'
-            onChangeText={(text) => this.searchText(text)}
+            onChangeText={(text) => searchText(text)}
           />
-          <TouchableWithoutFeedback onPress={ () => this.closeKeyboard() }>
-            <View style={SearchStyles.container} keyboardShouldPersistTaps='always'>
-              <FlatList style={SearchStyles.listContainer}
-                keyboardShouldPersistTaps='always'
-                data = {this.state.countryTipDataMatch}
-                keyExtractor = {(x, i) => i.toString()}
-                renderItem = { ({item}) =>
-                  <View style={SearchStyles.listButtonContainer}>
-                    <TouchableOpacity onPress={ () => this.props.navigation.navigate('SearchInfo',item.country) }>
-                      <View style={SearchStyles.listButton}>
-                        <Text style={SearchStyles.listButtonText}>{item.country}</Text>
-                      </View>
-                    </TouchableOpacity>
-                  </View>
-                }
-              />
-            </View>
-          </TouchableWithoutFeedback>
-        </View>
-      </SafeAreaView>
-    )
-  }
-}
+        )}
+        <TouchableWithoutFeedback onPress={() => closeKeyboard()}>
+          <View
+            style={SearchStyles.container}
+            keyboardShouldPersistTaps='always'
+          >
+            <FlatList
+              style={SearchStyles.listContainer}
+              keyboardShouldPersistTaps='always'
+              data={countryTipDataMatch}
+              keyExtractor={(x, i) => i.toString()}
+              renderItem={({ item }) => (
+                <View style={SearchStyles.listButtonContainer}>
+                  <TouchableOpacity
+                    onPress={() =>
+                      navigation.navigate('SearchInfo', item.country)
+                    }
+                  >
+                    <View style={SearchStyles.listButton}>
+                      <Text style={SearchStyles.listButtonText}>
+                        {item.country}
+                      </Text>
+                    </View>
+                  </TouchableOpacity>
+                </View>
+              )}
+            />
+          </View>
+        </TouchableWithoutFeedback>
+      </View>
+    </SafeAreaView>
+  );
+};

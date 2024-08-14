@@ -63,7 +63,7 @@ const CalculatorStyles = StyleSheet.create({
     fontFamily: 'hind',
     fontSize: 22,
     color: 'black',
-  }
+  },
 });
 
 export default CalculatorStyles;

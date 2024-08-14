@@ -48,7 +48,7 @@ const ListStyles = StyleSheet.create({
     textAlign: 'center',
     paddingLeft: 50,
     paddingRight: 50,
-  }
+  },
 });
 
 export default ListStyles;

@@ -1,43 +1,46 @@
-import React, { Component } from 'react';
-import { AppLoading } from 'expo';
+import { useCallback, useEffect, useState } from 'react';
+import { View } from 'react-native';
+import * as SplashScreen from 'expo-splash-screen';
 import * as Font from 'expo-font';
+
 import MainNavigation from './navigation/MainNavigation';
 
-export default class App extends Component {
-  state = {
-    isLoadingComplete: false,
-  };
+SplashScreen.preventAutoHideAsync();
 
-  render() {
-    if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
-      return (
-        <AppLoading
-          startAsync={this.loadResourcesAsync}
-          onError={this.handleLoadingError}
-          onFinish={this.handleFinishLoading}
-        />
-      );
-    } else {
-      return  <MainNavigation />
+export default App = () => {
+  const [appIsReady, setAppIsReady] = useState(false);
+
+  useEffect(() => {
+    async function prepare() {
+      try {
+        await Font.loadAsync({
+          'patrick-hand': require('./assets/fonts/PatrickHand-Regular.ttf'),
+          'nothing-you-could-do': require('./assets/fonts/NothingYouCouldDo.ttf'),
+          hind: require('./assets/fonts/hind-regular.otf'),
+        });
+      } catch (e) {
+        console.warn(e);
+      } finally {
+        setAppIsReady(true);
+      }
     }
+
+    prepare();
+  }, []);
+
+  const onLayoutRootView = useCallback(async () => {
+    if (appIsReady) {
+      await SplashScreen.hideAsync();
+    }
+  }, [appIsReady]);
+
+  if (!appIsReady) {
+    return null;
   }
 
-  // ASYNC LOAD FONTS
-  loadResourcesAsync = async () => {
-    return Promise.all([
-      Font.loadAsync({
-        'patrick-hand': require('./assets/fonts/PatrickHand-Regular.ttf'),
-        'nothing-you-could-do': require('./assets/fonts/NothingYouCouldDo.ttf'),
-        'hind': require('./assets/fonts/hind-regular.otf'),
-      }),
-    ]);
-  };
-  handleLoadingError = (error) => {
-    console.warn(error);
-  };
-  handleFinishLoading = () => {
-    this.setState({
-      isLoadingComplete: true
-    });
-  };
-}
+  return (
+    <View style={{ flex: 1 }} onLayout={onLayoutRootView}>
+      <MainNavigation />
+    </View>
+  );
+};
