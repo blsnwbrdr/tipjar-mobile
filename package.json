@@ -13,7 +13,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/blsnwbrdr/tipjar-mobile-app.git"
+    "url": "git+https://github.com/blsnwbrdr/tipjar-mobile.git"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "1.23.1",
