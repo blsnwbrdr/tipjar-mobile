@@ -15,7 +15,8 @@ const ListStyles = StyleSheet.create({
     backgroundColor: 'white',
   },
   listContainer: {
-    marginTop: 10,
+    marginTop: 5,
+    paddingTop: 5,
   },
   listButtonContainer: {
     alignItems: 'center',

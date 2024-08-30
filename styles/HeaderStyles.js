@@ -4,7 +4,7 @@ import { colorPrimary, colorSecondary, fontHeaderBig } from './Constants';
 const HeaderStyles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    paddingBottom: 20,
+    paddingBottom: 10,
   },
   titleText: {
     fontFamily: fontHeaderBig,
