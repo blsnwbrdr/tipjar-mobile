@@ -14,9 +14,9 @@ export default App = () => {
     async function prepare() {
       try {
         await Font.loadAsync({
-          'patrick-hand': require('./assets/fonts/PatrickHand-Regular.ttf'),
-          'nothing-you-could-do': require('./assets/fonts/NothingYouCouldDo.ttf'),
-          hind: require('./assets/fonts/hind-regular.otf'),
+          'raleway-light': require('./assets/fonts/Raleway-Light.ttf'),
+          'hind-semi-bold': require('./assets/fonts/Hind-SemiBold.ttf'),
+          'hind-light': require('./assets/fonts/Hind-Light.ttf'),
         });
       } catch (e) {
         console.warn(e);
