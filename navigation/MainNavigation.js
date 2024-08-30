@@ -32,14 +32,14 @@ const ListStackScreen = () => {
         headerTintColor: 'white',
         headerTitleStyle: {
           fontFamily: fontHeaderBig,
-          fontSize: 24,
+          fontSize: 22,
         },
       }}
     >
       <ListStack.Screen
         name='List'
         component={ListScreen}
-        options={{ headerShown: false }}
+        options={{ headerShown: false, title: '' }}
       />
       <ListStack.Screen
         name='Info'
@@ -65,14 +65,14 @@ function SearchStackScreen() {
         headerTintColor: 'white',
         headerTitleStyle: {
           fontFamily: fontHeaderBig,
-          fontSize: 24,
+          fontSize: 22,
         },
       }}
     >
       <SearchStack.Screen
         name='Search'
         component={SearchScreen}
-        options={{ headerShown: false }}
+        options={{ headerShown: false, title: '' }}
       />
       <SearchStack.Screen
         name='SearchInfo'
@@ -114,16 +114,8 @@ export default MainNavigation = () => {
           tabBarInactiveTintColor: colorDarkGrey,
         })}
       >
-        <Tab.Screen
-          name='ListStack'
-          component={ListStackScreen}
-          options={{ title: 'List' }}
-        />
-        <Tab.Screen
-          name='SearchStack'
-          component={SearchStackScreen}
-          options={{ title: 'Search' }}
-        />
+        <Tab.Screen name='ListStack' component={ListStackScreen} />
+        <Tab.Screen name='SearchStack' component={SearchStackScreen} />
         <Tab.Screen name='Calculator' component={CalculatorScreen} />
       </Tab.Navigator>
     </NavigationContainer>
