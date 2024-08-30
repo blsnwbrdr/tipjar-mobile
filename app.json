@@ -6,11 +6,9 @@
     "slug": "tipjar-mobile",
     "privacy": "public",
     "orientation": "portrait",
-    "icon": "./assets/tipjar-icon.png",
+    "icon": "./assets/app-store-icon.png",
     "splash": {
-      "image": "./assets/tipjar-splash.png",
-      "resizeMode": "cover",
-      "backgroundColor": "#3E2916"
+      "backgroundColor": "#44627B"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -22,9 +20,7 @@
         "NSLocationAlwaysUsageDescription": "requires location data"
       },
       "splash": {
-        "image": "./assets/tipjar-splash.png",
-        "resizeMode": "cover",
-        "backgroundColor": "#3E2916"
+        "backgroundColor": "#44627B"
       },
       "entitlements": {
         "aps-environment": "development"
