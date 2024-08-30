@@ -52,28 +52,28 @@ export default InfoScreen = ({ route }) => {
           <Text style={InfoStyles.countryIcon}>
             <FontAwesome name='cutlery' size={32} color='#494F56' />
           </Text>
-          <Text style={InfoStyles.countryTitle}>Dining*:</Text>
+          <Text style={InfoStyles.countryTitle}>Dining*</Text>
           <Text style={InfoStyles.countryText}>
             {countryTipDataRef.current.dining}
           </Text>
           <Text style={InfoStyles.countryIcon}>
             <FontAwesome name='taxi' size={32} color='#494F56' />
           </Text>
-          <Text style={InfoStyles.countryTitle}>Transportation:</Text>
+          <Text style={InfoStyles.countryTitle}>Transportation</Text>
           <Text style={InfoStyles.countryText}>
             {countryTipDataRef.current.transportation}
           </Text>
           <Text style={InfoStyles.countryIcon}>
             <FontAwesome name='building' size={32} color='#494F56' />
           </Text>
-          <Text style={InfoStyles.countryTitle}>Accommodation:</Text>
+          <Text style={InfoStyles.countryTitle}>Accommodation</Text>
           <Text style={InfoStyles.countryText}>
             {countryTipDataRef.current.accommodation}
           </Text>
           <Text style={InfoStyles.countryIcon}>
             <FontAwesome name='money' size={32} color='#494F56' />
           </Text>
-          <Text style={InfoStyles.countryTitle}>Currency**:</Text>
+          <Text style={InfoStyles.countryTitle}>Currency**</Text>
           <Text style={InfoStyles.countryText}>
             1 USD = {currencyDataRef.current}{' '}
             {countryTipDataRef.current.currency}
@@ -81,11 +81,11 @@ export default InfoScreen = ({ route }) => {
           <Text style={InfoStyles.countryIcon}>
             <FontAwesome name='language' size={32} color='#494F56' />
           </Text>
-          <Text style={InfoStyles.countryTitle}>Thank you:</Text>
+          <Text style={InfoStyles.countryTitle}>Thank you</Text>
           <Text style={InfoStyles.countryText}>
             {countryTipDataRef.current.thankyou}
           </Text>
-          <Text style={InfoStyles.countryTitle}>Goodbye:</Text>
+          <Text style={InfoStyles.countryTitle}>Goodbye</Text>
           <Text style={InfoStyles.countryText}>
             {countryTipDataRef.current.goodbye}
           </Text>

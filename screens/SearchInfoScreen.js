@@ -52,28 +52,28 @@ export default SearchInfoScreen = ({ route }) => {
           <Text style={SearchInfoStyles.countryIcon}>
             <FontAwesome name='cutlery' size={32} color='#494F56' />
           </Text>
-          <Text style={SearchInfoStyles.countryTitle}>Dining*:</Text>
+          <Text style={SearchInfoStyles.countryTitle}>Dining*</Text>
           <Text style={SearchInfoStyles.countryText}>
             {countryTipDataRef.current.dining}
           </Text>
           <Text style={SearchInfoStyles.countryIcon}>
             <FontAwesome name='taxi' size={32} color='#494F56' />
           </Text>
-          <Text style={SearchInfoStyles.countryTitle}>Transportation:</Text>
+          <Text style={SearchInfoStyles.countryTitle}>Transportation</Text>
           <Text style={SearchInfoStyles.countryText}>
             {countryTipDataRef.current.transportation}
           </Text>
           <Text style={SearchInfoStyles.countryIcon}>
             <FontAwesome name='building' size={32} color='#494F56' />
           </Text>
-          <Text style={SearchInfoStyles.countryTitle}>Accomodation:</Text>
+          <Text style={SearchInfoStyles.countryTitle}>Accomodation</Text>
           <Text style={SearchInfoStyles.countryText}>
             {countryTipDataRef.current.accommodation}
           </Text>
           <Text style={SearchInfoStyles.countryIcon}>
             <FontAwesome name='money' size={32} color='#494F56' />
           </Text>
-          <Text style={SearchInfoStyles.countryTitle}>Currency**:</Text>
+          <Text style={SearchInfoStyles.countryTitle}>Currency**</Text>
           <Text style={SearchInfoStyles.countryText}>
             1 USD = {currencyDataRef.current}{' '}
             {countryTipDataRef.current.currency}
@@ -81,11 +81,11 @@ export default SearchInfoScreen = ({ route }) => {
           <Text style={SearchInfoStyles.countryIcon}>
             <FontAwesome name='language' size={32} color='#494F56' />
           </Text>
-          <Text style={SearchInfoStyles.countryTitle}>Thank you:</Text>
+          <Text style={SearchInfoStyles.countryTitle}>Thank you</Text>
           <Text style={SearchInfoStyles.countryText}>
             {countryTipDataRef.current.thankyou}
           </Text>
-          <Text style={SearchInfoStyles.countryTitle}>Goodbye:</Text>
+          <Text style={SearchInfoStyles.countryTitle}>Goodbye</Text>
           <Text style={SearchInfoStyles.countryText}>
             {countryTipDataRef.current.goodbye}
           </Text>
