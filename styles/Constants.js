@@ -1,8 +1,13 @@
+// FONT VARIABLES
+export const fontHeaderBig = 'raleway-light';
+export const fontHeaderSmall = 'hind-semi-bold';
+export const fontBody = 'hind-light';
+
 // STYLE VARIABLES
-export const colorDarkGrey = '#494F56';
-export const colorMediumGrey = '#A4A7AB';
-export const colorLightGrey = '#FDFDFD';
-export const colorOrange = '#B57A42';
-export const colorLightOrange = '#ECDED0';
-export const colorBlue = '#427DB5';
-export const colorLightBlue = '#D0DFEC';
+export const colorPrimary = '#DF8D40';
+export const colorSecondary = '#44627B';
+export const colorTertiary = '#ffa149';
+export const colorLightGrey = '#fafafa';
+export const colorMediumGrey = '#aaaaaa';
+export const colorDarkGrey = '#444444';
+export const colorRed = '#BF0000';

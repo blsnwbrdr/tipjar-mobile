@@ -12,7 +12,12 @@ import SearchInfoScreen from './../screens/SearchInfoScreen';
 import CalculatorScreen from './../screens/CalculatorScreen';
 
 // STYLE CONSTANTS
-import { colorOrange, colorDarkGrey } from './../styles/Constants';
+import {
+  colorPrimary,
+  colorSecondary,
+  colorDarkGrey,
+  fontHeaderBig,
+} from './../styles/Constants';
 
 // DEFINE LISTSTACK AS NATIVE STACK NAVIGATOR
 const ListStack = createNativeStackNavigator();
@@ -22,11 +27,11 @@ const ListStackScreen = () => {
     <ListStack.Navigator
       screenOptions={{
         headerStyle: {
-          backgroundColor: colorOrange,
+          backgroundColor: colorSecondary,
         },
         headerTintColor: 'white',
         headerTitleStyle: {
-          fontFamily: 'patrick-hand',
+          fontFamily: fontHeaderBig,
           fontSize: 24,
         },
       }}
@@ -55,11 +60,11 @@ function SearchStackScreen() {
     <SearchStack.Navigator
       screenOptions={{
         headerStyle: {
-          backgroundColor: colorOrange,
+          backgroundColor: colorSecondary,
         },
         headerTintColor: 'white',
         headerTitleStyle: {
-          fontFamily: 'patrick-hand',
+          fontFamily: fontHeaderBig,
           fontSize: 24,
         },
       }}
@@ -105,7 +110,7 @@ export default MainNavigation = () => {
 
             return <FontAwesome name={iconName} size={20} color={color} />;
           },
-          tabBarActiveTintColor: colorOrange,
+          tabBarActiveTintColor: colorPrimary,
           tabBarInactiveTintColor: colorDarkGrey,
         })}
       >

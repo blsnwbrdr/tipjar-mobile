@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { colorOrange, colorLightGrey, colorDarkGrey } from './Constants';
+import { colorDarkGrey, fontBody } from './Constants';
 
 const SearchStyles = StyleSheet.create({
   safeViewContainer: {
@@ -41,10 +41,10 @@ const SearchStyles = StyleSheet.create({
   },
   listButtonContainer: {
     alignItems: 'center',
-    paddingBottom: 10,
+    paddingBottom: 8,
   },
   listButtonText: {
-    fontFamily: 'hind',
+    fontFamily: fontBody,
     fontSize: 18,
     color: colorDarkGrey,
     textAlign: 'center',

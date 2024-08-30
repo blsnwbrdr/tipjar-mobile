@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { colorOrange, colorDarkGrey } from './Constants';
+import { colorPrimary, colorSecondary, fontHeaderBig } from './Constants';
 
 const HeaderStyles = StyleSheet.create({
   container: {
@@ -7,15 +7,15 @@ const HeaderStyles = StyleSheet.create({
     paddingBottom: 20,
   },
   titleText: {
-    fontFamily: 'patrick-hand',
+    fontFamily: fontHeaderBig,
     fontSize: 60,
-    color: colorOrange,
+    color: colorPrimary,
     marginBottom: 0,
   },
   subTitleText: {
-    fontFamily: 'nothing-you-could-do',
+    fontFamily: fontHeaderBig,
     fontSize: 16,
-    color: colorDarkGrey,
+    color: colorSecondary,
   },
 });
 

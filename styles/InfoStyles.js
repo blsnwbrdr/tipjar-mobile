@@ -1,5 +1,10 @@
 import { StyleSheet } from 'react-native';
-import { colorDarkGrey, colorOrange, colorLightGrey } from './Constants';
+import {
+  colorPrimary,
+  colorDarkGrey,
+  fontHeaderSmall,
+  fontBody,
+} from './Constants';
 
 const InfoStyles = StyleSheet.create({
   container: {
@@ -16,23 +21,16 @@ const InfoStyles = StyleSheet.create({
     paddingLeft: 25,
     paddingRight: 25,
   },
-  countryHeader: {
-    fontFamily: 'patrick-hand',
-    fontSize: 42,
-    color: colorOrange,
-    textAlign: 'center',
-    paddingBottom: 20,
-  },
   countryTitle: {
-    fontFamily: 'hind',
+    fontFamily: fontHeaderSmall,
     fontSize: 22,
     color: colorDarkGrey,
     textAlign: 'center',
     textDecorationLine: 'underline',
-    textDecorationColor: colorOrange,
+    textDecorationColor: colorPrimary,
   },
   countryText: {
-    fontFamily: 'hind',
+    fontFamily: fontBody,
     fontSize: 18,
     color: colorDarkGrey,
     textAlign: 'center',
@@ -44,7 +42,7 @@ const InfoStyles = StyleSheet.create({
     paddingBottom: 10,
   },
   disclaimerText: {
-    fontFamily: 'hind',
+    fontFamily: fontBody,
     fontSize: 12,
     color: colorDarkGrey,
     textAlign: 'center',
