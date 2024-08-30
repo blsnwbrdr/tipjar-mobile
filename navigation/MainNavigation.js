@@ -12,7 +12,12 @@ import SearchInfoScreen from './../screens/SearchInfoScreen';
 import CalculatorScreen from './../screens/CalculatorScreen';
 
 // STYLE CONSTANTS
-import { colorOrange, colorDarkGrey } from './../styles/Constants';
+import {
+  colorPrimary,
+  colorSecondary,
+  colorDarkGrey,
+  fontHeaderBig,
+} from './../styles/Constants';
 
 // DEFINE LISTSTACK AS NATIVE STACK NAVIGATOR
 const ListStack = createNativeStackNavigator();
@@ -22,19 +27,19 @@ const ListStackScreen = () => {
     <ListStack.Navigator
       screenOptions={{
         headerStyle: {
-          backgroundColor: colorOrange,
+          backgroundColor: colorSecondary,
         },
         headerTintColor: 'white',
         headerTitleStyle: {
-          fontFamily: 'patrick-hand',
-          fontSize: 24,
+          fontFamily: fontHeaderBig,
+          fontSize: 22,
         },
       }}
     >
       <ListStack.Screen
         name='List'
         component={ListScreen}
-        options={{ headerShown: false }}
+        options={{ headerShown: false, title: '' }}
       />
       <ListStack.Screen
         name='Info'
@@ -55,19 +60,19 @@ function SearchStackScreen() {
     <SearchStack.Navigator
       screenOptions={{
         headerStyle: {
-          backgroundColor: colorOrange,
+          backgroundColor: colorSecondary,
         },
         headerTintColor: 'white',
         headerTitleStyle: {
-          fontFamily: 'patrick-hand',
-          fontSize: 24,
+          fontFamily: fontHeaderBig,
+          fontSize: 22,
         },
       }}
     >
       <SearchStack.Screen
         name='Search'
         component={SearchScreen}
-        options={{ headerShown: false }}
+        options={{ headerShown: false, title: '' }}
       />
       <SearchStack.Screen
         name='SearchInfo'
@@ -105,20 +110,12 @@ export default MainNavigation = () => {
 
             return <FontAwesome name={iconName} size={20} color={color} />;
           },
-          tabBarActiveTintColor: colorOrange,
+          tabBarActiveTintColor: colorPrimary,
           tabBarInactiveTintColor: colorDarkGrey,
         })}
       >
-        <Tab.Screen
-          name='ListStack'
-          component={ListStackScreen}
-          options={{ title: 'List' }}
-        />
-        <Tab.Screen
-          name='SearchStack'
-          component={SearchStackScreen}
-          options={{ title: 'Search' }}
-        />
+        <Tab.Screen name='ListStack' component={ListStackScreen} />
+        <Tab.Screen name='SearchStack' component={SearchStackScreen} />
         <Tab.Screen name='Calculator' component={CalculatorScreen} />
       </Tab.Navigator>
     </NavigationContainer>

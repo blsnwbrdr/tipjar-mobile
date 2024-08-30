@@ -1,10 +1,10 @@
 import { StyleSheet } from 'react-native';
-import { colorOrange, colorLightOrange, colorLightGrey } from './Constants';
+import { colorSecondary, colorMediumGrey, fontBody } from './Constants';
 
 const CalculatorStyles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colorLightGrey,
+    backgroundColor: 'white',
   },
   displayContainer: {
     flex: 2,
@@ -12,7 +12,7 @@ const CalculatorStyles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
   displayText: {
-    fontFamily: 'hind',
+    fontFamily: fontBody,
     color: 'white',
     fontSize: 64,
     textAlign: 'right',
@@ -20,7 +20,7 @@ const CalculatorStyles = StyleSheet.create({
   },
   calcPad: {
     flex: 8,
-    backgroundColor: colorLightGrey,
+    backgroundColor: 'white',
   },
   calcRow: {
     flex: 3,
@@ -35,9 +35,10 @@ const CalculatorStyles = StyleSheet.create({
     margin: 5,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: colorLightOrange,
+    color: 'white',
+    backgroundColor: colorMediumGrey,
     borderWidth: 1,
-    borderColor: colorOrange,
+    borderColor: colorSecondary,
     borderRadius: 5,
   },
   calcNumberButton: {
@@ -46,7 +47,7 @@ const CalculatorStyles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 1,
-    borderColor: colorOrange,
+    borderColor: colorSecondary,
     borderRadius: 5,
   },
   calcOtherButton: {
@@ -54,13 +55,13 @@ const CalculatorStyles = StyleSheet.create({
     margin: 5,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: colorLightOrange,
+    backgroundColor: colorMediumGrey,
     borderWidth: 1,
-    borderColor: colorOrange,
+    borderColor: colorSecondary,
     borderRadius: 5,
   },
   calcButtonText: {
-    fontFamily: 'hind',
+    fontFamily: fontBody,
     fontSize: 22,
     color: 'black',
   },

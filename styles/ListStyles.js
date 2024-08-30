@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { colorDarkGrey } from './Constants';
+import { colorDarkGrey, fontBody } from './Constants';
 
 const ListStyles = StyleSheet.create({
   safeViewContainer: {
@@ -15,14 +15,15 @@ const ListStyles = StyleSheet.create({
     backgroundColor: 'white',
   },
   listContainer: {
-    marginTop: 10,
+    marginTop: 5,
+    paddingTop: 5,
   },
   listButtonContainer: {
     alignItems: 'center',
-    paddingBottom: 10,
+    paddingBottom: 8,
   },
   listButtonText: {
-    fontFamily: 'hind',
+    fontFamily: fontBody,
     fontSize: 18,
     color: colorDarkGrey,
     textAlign: 'center',
@@ -34,7 +35,7 @@ const ListStyles = StyleSheet.create({
     paddingBottom: 50,
   },
   otherText: {
-    fontFamily: 'hind',
+    fontFamily: fontBody,
     fontSize: 18,
     color: colorDarkGrey,
     textAlign: 'center',
@@ -42,7 +43,7 @@ const ListStyles = StyleSheet.create({
     paddingRight: 20,
   },
   otherTextSmall: {
-    fontFamily: 'hind',
+    fontFamily: fontBody,
     fontSize: 16,
     color: colorDarkGrey,
     textAlign: 'center',

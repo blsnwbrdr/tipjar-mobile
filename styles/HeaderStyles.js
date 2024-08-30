@@ -1,21 +1,25 @@
 import { StyleSheet } from 'react-native';
-import { colorOrange, colorDarkGrey } from './Constants';
+import { colorPrimary, colorSecondary, fontHeaderBig } from './Constants';
 
 const HeaderStyles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    paddingBottom: 20,
+    paddingBottom: 10,
   },
   titleText: {
-    fontFamily: 'patrick-hand',
+    fontFamily: fontHeaderBig,
     fontSize: 60,
-    color: colorOrange,
+    color: colorPrimary,
     marginBottom: 0,
   },
+  img: {
+    height: 60,
+    width: 60,
+  },
   subTitleText: {
-    fontFamily: 'nothing-you-could-do',
+    fontFamily: fontHeaderBig,
     fontSize: 16,
-    color: colorDarkGrey,
+    color: colorSecondary,
   },
 });
 
