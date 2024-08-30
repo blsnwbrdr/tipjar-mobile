@@ -12,6 +12,10 @@ const HeaderStyles = StyleSheet.create({
     color: colorPrimary,
     marginBottom: 0,
   },
+  img: {
+    height: 60,
+    width: 60,
+  },
   subTitleText: {
     fontFamily: fontHeaderBig,
     fontSize: 16,
