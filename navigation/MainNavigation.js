@@ -114,8 +114,16 @@ export default MainNavigation = () => {
           tabBarInactiveTintColor: colorDarkGrey,
         })}
       >
-        <Tab.Screen name='ListStack' component={ListStackScreen} />
-        <Tab.Screen name='SearchStack' component={SearchStackScreen} />
+        <Tab.Screen
+          name='ListStack'
+          component={ListStackScreen}
+          options={{ title: 'List' }}
+        />
+        <Tab.Screen
+          name='SearchStack'
+          component={SearchStackScreen}
+          options={{ title: 'Search' }}
+        />
         <Tab.Screen name='Calculator' component={CalculatorScreen} />
       </Tab.Navigator>
     </NavigationContainer>
