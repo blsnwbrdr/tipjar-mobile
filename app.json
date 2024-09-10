@@ -2,7 +2,7 @@
   "expo": {
     "name": "Tip Jar",
     "description": "A globetrotting guide to gratuity",
-    "version": "3.0.1",
+    "version": "3.1.0",
     "slug": "tipjar-mobile",
     "privacy": "public",
     "orientation": "portrait",
@@ -15,7 +15,7 @@
     },
     "ios": {
       "bundleIdentifier": "com.brandonscode.tipjar",
-      "buildNumber": "3.0.1",
+      "buildNumber": "3.1.0",
       "infoPlist": {
         "NSLocationAlwaysUsageDescription": "requires location data"
       },
