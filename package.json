@@ -6,7 +6,7 @@
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "branch-clean-up": "git branch -lvv | cut -c3- | awk '/: gone]/ {print $1}' | xargs git branch -D",
-    "build": "eas build --platform ios",
+    "build": "eas build --profile production --platform ios",
     "start": "npx expo start",
     "submit": "eas submit -p ios"
   },
