@@ -12,6 +12,10 @@ import {
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+// COMPONENTS
+import Header from './../components/Header';
+import Footer from './../components/Footer';
+
 // STYLES
 import { colorMediumGrey } from './../styles/Constants';
 import SearchStyles from './../styles/SearchStyles';
@@ -65,6 +69,7 @@ export default Search = ({ navigation }) => {
     <SafeAreaView style={SearchStyles.safeViewContainer}>
       <StatusBar barStyle='dark-content' />
       <View style={SearchStyles.bodyContainer}>
+        <Header />
         {displaySearchBarRef.current && (
           <TextInput
             style={SearchStyles.input}
@@ -100,6 +105,7 @@ export default Search = ({ navigation }) => {
                   </TouchableOpacity>
                 </View>
               )}
+              ListFooterComponent={<Footer />}
             />
           </View>
         </TouchableWithoutFeedback>
